@@ -1,91 +1,132 @@
-import { siteConfig } from "@/config/siteConfig";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
-    const links = [
-        { label: "Home", href: "/" },
-        { label: "Services", href: "#services" },
-        { label: "About Us", href: "#about" },
-        { label: "Contact", href: "#contact" },
-    ];
-
-    const legal = [
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-    ];
-
-    return (
-        <footer className="bg-[#080E1D] pt-20 pb-10 px-6 border-t border-white/10">
-            <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-
-                    {/* Col 1: Brand */}
-                    <div className="flex flex-col gap-6">
-                        <img src={siteConfig.logoUrl} alt={siteConfig.name} className="h-10 object-contain object-left" style={{ filter: 'brightness(0) invert(1)' }} />
-                        <p className="text-white/50 text-base leading-relaxed font-[400] max-w-sm">
-                            Premium international shipping from Ottawa to Senegal. Safe, reliable, and transparent.
-                        </p>
-                    </div>
-
-                    {/* Col 2: Quick Links */}
-                    <div>
-                        <h4 className="font-[600] text-white text-lg mb-6">Quick Links</h4>
-                        <ul className="flex flex-col gap-4">
-                            {links.map((link) => (
-                                <li key={link.label}>
-                                    <a href={link.href} className="text-white/60 hover:text-[#1E6FD9] transition-colors text-sm font-[400]">
-                                        {link.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Col 3: Contact */}
-                    <div>
-                        <h4 className="font-[600] text-white text-lg mb-6">Contact</h4>
-                        <ul className="flex flex-col gap-4">
-                            <li>
-                                <a href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, '')}`} className="text-white/60 hover:text-[#1E6FD9] transition-colors text-sm font-[400]">
-                                    {siteConfig.phone}
-                                </a>
-                            </li>
-                            <li>
-                                <a href={`mailto:${siteConfig.email}`} className="text-white/60 hover:text-[#1E6FD9] transition-colors text-sm font-[400]">
-                                    {siteConfig.email}
-                                </a>
-                            </li>
-                            <li className="text-white/60 text-sm font-[400]">
-                                {siteConfig.address}
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Col 4: Legal */}
-                    <div>
-                        <h4 className="font-[600] text-white text-lg mb-6">Legal</h4>
-                        <ul className="flex flex-col gap-4">
-                            {legal.map((link) => (
-                                <li key={link.label}>
-                                    <a href={link.href} className="text-white/60 hover:text-[#1E6FD9] transition-colors text-sm font-[400]">
-                                        {link.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                </div>
-
-                {/* Bottom Row */}
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-white/40 text-sm font-[400]">
-                        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-                    </p>
-                    <div className="text-white/40 text-sm font-[400]">
-                        Website meticulously crafted for ShipDirect.
-                    </div>
-                </div>
+  return (
+    <footer className="bg-[#0D1F5C] text-white">
+      {/* Main footer grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Column 1: Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="inline-block bg-white rounded-lg px-3 py-2 mb-4">
+              <Image
+                src="https://assets.cdn.filesafe.space/h3iwnUDSYBMxhYZeIrq4/media/675c4678a08ae6fe23d57d7b.png"
+                alt="ShipDirect"
+                width={130}
+                height={44}
+                className="h-9 w-auto object-contain"
+              />
             </div>
-        </footer>
-    );
+            <p className="text-sm text-blue-200 leading-relaxed mb-5">
+              Canada&apos;s trusted shipping and export partner for the Senegal route.
+              Serving families, communities, and businesses with transparent pricing
+              and reliable logistics.
+            </p>
+            <div className="space-y-2 text-sm text-blue-100">
+              <p className="flex items-start gap-2">
+                <span>📞</span>
+                <a href="tel:6137002747" className="hover:text-white transition-colors">
+                  613-700-2747
+                </a>
+              </p>
+              <p className="flex items-start gap-2">
+                <span>✉️</span>
+                <a href="mailto:info@shipdirect.ca" className="hover:text-white transition-colors">
+                  info@shipdirect.ca
+                </a>
+              </p>
+              <p className="flex items-start gap-2">
+                <span>📍</span>
+                <span>300 Miwate Pvt, Ottawa, ON K1R 0E8</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Column 2: Company */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Company
+            </h3>
+            <ul className="space-y-2.5 text-sm text-blue-200">
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Contact", href: "/contact" },
+                { label: "FAQs", href: "/faq" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Services
+            </h3>
+            <ul className="space-y-2.5 text-sm text-blue-200">
+              {[
+                { label: "B2C Pricing", href: "/pricing" },
+                { label: "How It Works", href: "/how-it-works" },
+                { label: "Get a Quote", href: "/quote" },
+                { label: "Wholesale / B2B", href: "/wholesale" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Legal + CTA */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              Legal
+            </h3>
+            <ul className="space-y-2.5 text-sm text-blue-200 mb-6">
+              {[
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms & Conditions", href: "/terms" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/quote"
+              className="shimmer-btn inline-flex items-center px-5 py-2.5 bg-[#D42B2B] text-white text-sm font-semibold rounded-lg hover:bg-[#b82424] transition-colors"
+            >
+              Get a Quote →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-300">
+          <p>© 2025 ShipDirect. All rights reserved. Ottawa, Canada.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <span>·</span>
+            <a href="mailto:info@shipdirect.ca" className="hover:text-white transition-colors">
+              info@shipdirect.ca
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
