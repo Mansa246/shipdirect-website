@@ -185,13 +185,6 @@ export default function HomePage() {
                       {card.name}
                     </span>
                   </div>
-                  <span
-                    className={`font-bold text-sm ${
-                      (card as { gold?: boolean }).gold ? "text-[#C4882A]" : "text-blue-200"
-                    }`}
-                  >
-                    {card.price}
-                  </span>
                 </div>
               ))}
             </div>
