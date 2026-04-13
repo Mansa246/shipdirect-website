@@ -58,7 +58,7 @@ export default function TermsPage() {
 
           <Section title="6. Pickup and Drop-off">
             Customers are responsible for delivering goods to our Ottawa drop-off location
-            at 300 Miwate Pvt, Ottawa, ON K1R 0E8, unless a paid pickup has been arranged
+            (address provided upon confirmation), unless a paid pickup has been arranged
             in advance. Pickup services are subject to availability and will incur an
             additional charge based on distance.
           </Section>
@@ -100,7 +100,7 @@ export default function TermsPage() {
             For questions about these Terms & Conditions:
             <div className="mt-3 bg-[#EEF1F8] rounded-xl p-5">
               <p className="font-semibold text-[#0D1F5C]">ShipDirect</p>
-              <p>300 Miwate Pvt, Ottawa, ON K1R 0E8</p>
+              <p>Ottawa Drop-off Location (Provided upon confirmation)</p>
               <p>
                 <a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] hover:underline">
                   info@shipdirect.ca

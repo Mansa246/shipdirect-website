@@ -17,8 +17,8 @@ const steps = [
   {
     n: "02",
     title: "Drop Off Your Goods (or Request Pickup)",
-    desc: "Once confirmed, bring your goods to our Ottawa drop-off location at 300 Miwate Pvt, Ottawa, ON K1R 0E8. If you need pickup, we can arrange it for an additional charge depending on your distance. Ensure goods are properly packed before drop-off.",
-    note: "📍 Drop-off: 300 Miwate Pvt, Ottawa · Pickup available for extra charge",
+    desc: "Once confirmed, your drop-off location will be provided to you. If you need pickup, we can arrange it for an additional charge depending on your distance. Ensure goods are properly packed before drop-off.",
+    note: "📍 Drop-off location confirmed after booking · Pickup available for extra charge",
   },
   {
     n: "03",

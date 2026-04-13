@@ -14,7 +14,7 @@ const b2cFaqs = [
   },
   {
     q: "Do I need to drop off my goods at your location?",
-    a: "Our standard process is for customers to drop off their goods at our Ottawa location at 300 Miwate Pvt, Ottawa, ON K1R 0E8. If you're unable to bring goods in yourself, we can arrange pickup for an additional charge depending on your location and distance.",
+    a: "Our standard process is for customers to drop off their goods at our Ottawa location (the exact address will be provided upon booking confirmation). If you're unable to bring goods in yourself, we can arrange pickup for an additional charge depending on your location and distance.",
   },
   {
     q: "Do you offer pickup in Canada?",

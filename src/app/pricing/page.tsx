@@ -159,7 +159,7 @@ export default function PricingPage() {
               <ul className="space-y-3 text-sm text-[#1A1410]">
                 <li className="flex items-start gap-2">
                   <span className="text-[#0D1F5C] shrink-0">•</span>
-                  Standard: Drop-off at 300 Miwate Pvt, Ottawa, ON K1R 0E8
+                  Standard: Drop-off at our Ottawa location (address provided upon confirmation)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#0D1F5C] shrink-0">•</span>

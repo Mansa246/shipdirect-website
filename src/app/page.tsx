@@ -462,7 +462,7 @@ export default function HomePage() {
             <div>
               <div className="text-2xl mb-2">📍</div>
               <div className="font-semibold text-sm mb-1">Location</div>
-              <p className="text-blue-200 text-sm">300 Miwate Pvt, Ottawa, ON K1R 0E8</p>
+              <p className="text-blue-200 text-sm">Ottawa Drop-off (Provided upon confirmation)</p>
             </div>
           </div>
         </div>

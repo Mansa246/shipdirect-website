@@ -1,11 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useMotionTemplate } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/config/animations";
 import { Package2, ArrowRight, ChevronDown, CheckCircle2, Navigation, ShieldCheck, Car } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
+import Magnetic from "@/components/Magnetic";
+import { useRef, MouseEvent } from "react";
 
 export default function Hero() {
+    const containerRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef as any,
+        offset: ["start start", "end start"]
+    });
+
+    const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const opacityBg = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+
+    const mouseX = useSpring(0, { stiffness: 50, damping: 20 });
+    const mouseY = useSpring(0, { stiffness: 50, damping: 20 });
+
+    function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
 
     const supportingPills = [
         { text: "Transparent Pricing", icon: CheckCircle2 },
@@ -15,19 +34,30 @@ export default function Hero() {
     ];
 
     return (
-        <section className="relative w-full min-h-[100dvh] flex flex-col justify-end overflow-hidden pt-32 pb-24">
+        <section 
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            className="relative w-full min-h-[100dvh] flex flex-col justify-end overflow-hidden pt-32 pb-24"
+        >
             {/* Background Layers */}
-            <div
+            <motion.div
                 className="absolute inset-0 z-0 cover-image bg-center bg-cover"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1920&q=80")' }}
+                style={{ 
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1920&q=80")',
+                    y: yBg,
+                    opacity: opacityBg
+                }}
             />
             <div
                 className="absolute inset-0 z-0 pointer-events-none"
                 style={{ background: 'linear-gradient(135deg, rgba(8,14,29,0.97) 0%, rgba(8,14,29,0.75) 40%, rgba(10,35,66,0.40) 100%)' }}
             />
-            <div
-                className="absolute inset-0 z-0 pointer-events-none"
-                style={{ background: 'radial-gradient(ellipse 60% 50% at 0% 100%, rgba(30,111,217,0.15) 0%, transparent 70%)' }}
+            {/* Interactive Glow */}
+            <motion.div
+                className="absolute inset-0 z-0 pointer-events-none opacity-80 mix-blend-screen"
+                style={{
+                    background: useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(30,111,217,0.15) 0%, transparent 60%)`
+                }}
             />
             <div className="absolute inset-0 z-0 noise-overlay" />
 
@@ -81,25 +111,23 @@ export default function Hero() {
 
                     {/* 7. CTA row */}
                     <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-                        <motion.a
-                            href="#quote"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                            className="group shimmer-btn bg-[#1E6FD9] text-white rounded-full px-8 py-4 font-semibold flex items-center justify-center gap-2"
-                        >
-                            Get a Free Quote
-                            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                        </motion.a>
-                        <motion.a
-                            href="#services"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                            className="border border-white/25 text-white rounded-full px-8 py-4 font-semibold flex items-center justify-center hover:bg-white/10 transition-colors"
-                        >
-                            View Services
-                        </motion.a>
+                        <Magnetic>
+                            <a
+                                href="#quote"
+                                className="group shimmer-btn bg-[#1E6FD9] text-white rounded-full px-8 py-4 font-semibold flex items-center justify-center gap-2"
+                            >
+                                Get a Free Quote
+                                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                            </a>
+                        </Magnetic>
+                        <Magnetic>
+                            <a
+                                href="#services"
+                                className="border border-white/25 text-white rounded-full px-8 py-4 font-semibold flex items-center justify-center hover:bg-white/10 transition-colors"
+                            >
+                                View Services
+                            </a>
+                        </Magnetic>
                     </motion.div>
                 </motion.div>
             </div>

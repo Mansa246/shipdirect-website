@@ -65,7 +65,7 @@ export default function QuotePage() {
             <div className="text-center p-6 bg-[#EEF1F8] rounded-2xl border border-gray-200">
               <div className="text-3xl mb-3">📍</div>
               <div className="font-bold text-[#0D1F5C] text-sm mb-2">Drop-off Location</div>
-              <p className="text-sm text-[#6B7280]">300 Miwate Pvt, Ottawa, ON K1R 0E8</p>
+              <p className="text-sm text-[#6B7280]">Ottawa Drop-off Location (Provided upon confirmation)</p>
             </div>
           </div>
         </div>

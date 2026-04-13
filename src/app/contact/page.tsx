@@ -58,8 +58,8 @@ export default function ContactPage() {
                     <div>
                       <div className="text-xs text-blue-300 uppercase tracking-wide mb-1">Address</div>
                       <p className="font-semibold leading-relaxed">
-                        300 Miwate Pvt<br />
-                        Ottawa, ON K1R 0E8, Canada
+                        Ottawa Drop-off Location<br />
+                        (Provided upon confirmation)
                       </p>
                     </div>
                   </div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { staggerContainer, scaleUp, fadeUp } from "@/config/animations";
 import { Package, PackageOpen, Archive, Armchair, ShoppingBag, Car, Truck, PackageCheck } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
+import FlashlightCard from "@/components/FlashlightCard";
 
 export default function Services() {
     const services = [
@@ -47,7 +48,7 @@ export default function Services() {
 
                         if (service.featured) {
                             return (
-                                <motion.div
+                                <FlashlightCard
                                     key={i}
                                     variants={scaleUp}
                                     className="bg-white border-2 border-[#1E6FD9] rounded-3xl p-7 flex flex-col h-full transform transition-transform duration-300 hover:-translate-y-1.5 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-accent)]"
@@ -60,16 +61,16 @@ export default function Services() {
                                     <p className="font-[400] text-sm text-[#5A6478] mb-auto pb-5">{service.detail}</p>
                                     <a
                                         href="#quote"
-                                        className="inline-block bg-[#1E6FD9] border border-[#1E6FD9] rounded-full px-4 py-1.5 text-xs font-[600] text-white w-fit hover:bg-[#1859B3] transition-colors"
+                                        className="inline-block bg-[#1E6FD9] border border-[#1E6FD9] rounded-full px-4 py-1.5 text-xs font-[600] text-white w-fit hover:bg-[#1859B3] transition-colors relative z-10"
                                     >
                                         GET A CUSTOM QUOTE &rarr;
                                     </a>
-                                </motion.div>
+                                </FlashlightCard>
                             );
                         }
 
                         return (
-                            <motion.div
+                            <FlashlightCard
                                 key={i}
                                 variants={scaleUp}
                                 className="bg-[--color-bg] border border-[--color-border] rounded-3xl p-7 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-1.5 hover:border-[#1E6FD9]/40 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)]"
@@ -82,11 +83,11 @@ export default function Services() {
                                 <p className="font-[400] text-sm text-[#9099AB] mb-auto pb-5">{service.detail}</p>
                                 <a
                                     href={siteConfig.quoteUrl}
-                                    className="inline-block bg-[--color-surface] border border-[--color-border] rounded-full px-4 py-1.5 text-xs font-[600] text-[#5A6478] w-fit hover:bg-[#1E6FD9] hover:text-white hover:border-[#1E6FD9] transition-colors"
+                                    className="inline-block bg-[--color-surface] border border-[--color-border] rounded-full px-4 py-1.5 text-xs font-[600] text-[#5A6478] w-fit hover:bg-[#1E6FD9] hover:text-white hover:border-[#1E6FD9] transition-colors relative z-10"
                                 >
                                     Get Quote
                                 </a>
-                            </motion.div>
+                            </FlashlightCard>
                         );
                     })}
                 </motion.div>

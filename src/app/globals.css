@@ -21,6 +21,11 @@
     --color-primary: #0D1F5C;
     --color-accent: #D42B2B;
     --color-gold: #C4882A;
+    --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --shadow-card: 0 10px 30px -10px rgba(13, 31, 92, 0.08);
+    --shadow-card-hover: 0 20px 40px -10px rgba(13, 31, 92, 0.15);
+    --shadow-accent: 0 20px 40px -10px rgba(30, 111, 217, 0.25);
   }
 
   html {

@@ -97,7 +97,7 @@ export default function AboutPage() {
               </p>
               <p className="text-[#1A1410] leading-relaxed">
                 Our operations are straightforward and intentional. Customers in Ottawa
-                can drop their goods at our location at 300 Miwate Pvt, or arrange a
+                can drop their goods at our Ottawa location (address provided upon confirmation), or arrange a
                 pickup for a small additional fee. From there, we handle the entire
                 export process — consolidation, documentation, and transit — until your
                 shipment arrives safely at our Keur Massar facility in Senegal.

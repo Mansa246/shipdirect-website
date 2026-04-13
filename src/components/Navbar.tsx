@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/config/siteConfig";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
+import Magnetic from "@/components/Magnetic";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    
+    const { scrollYProgress } = useScroll();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,34 +40,34 @@ export default function Navbar() {
                     {/* Desktop Links */}
                     <div className="hidden md:flex items-center gap-8">
                         {["Home", "Services", "About Us", "Contact"].map((label) => (
-                            <a
-                                key={label}
-                                href={label === "Home" ? "/" : `#${label.toLowerCase().replace(" ", "-")}`}
-                                className={`font-[500] text-sm transition-colors ${isScrolled
-                                    ? "text-[--color-text-secondary] hover:text-[--color-text-primary]"
-                                    : "text-white/80 hover:text-white"
-                                    }`}
-                            >
-                                {label}
-                            </a>
+                            <Magnetic key={label} pull={0.1}>
+                                <a
+                                    href={label === "Home" ? "/" : `#${label.toLowerCase().replace(" ", "-")}`}
+                                    className={`font-[500] px-2 py-1 text-sm transition-colors ${isScrolled
+                                        ? "text-[--color-text-secondary] hover:text-[--color-text-primary]"
+                                        : "text-white/80 hover:text-white"
+                                        }`}
+                                >
+                                    {label}
+                                </a>
+                            </Magnetic>
                         ))}
                     </div>
 
                     {/* CTA & Mobile Toggle */}
                     <div className="flex items-center gap-4">
                         <div className="hidden md:block">
-                            <motion.a
-                                href="#quote"
-                                whileHover={{ scale: 1.03 }}
-                                whileTap={{ scale: 0.97 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                className={`rounded-full px-5 py-2.5 font-semibold text-sm transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] inline-block ${isScrolled
-                                    ? "bg-transparent border border-[#0A0F1E] text-[#0A0F1E] hover:bg-black/5"
-                                    : "bg-white/10 border border-white/20 text-white backdrop-blur-sm hover:bg-white/20"
-                                    }`}
-                            >
-                                Get a Quote
-                            </motion.a>
+                            <Magnetic pull={0.2}>
+                                <motion.a
+                                    href="#quote"
+                                    className={`rounded-full px-5 py-2.5 font-semibold text-sm transition-colors duration-400 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] inline-block ${isScrolled
+                                        ? "bg-transparent border border-[#0A0F1E] text-[#0A0F1E] hover:bg-black/5"
+                                        : "bg-white/10 border border-white/20 text-white backdrop-blur-sm hover:bg-white/20"
+                                        }`}
+                                >
+                                    Get a Quote
+                                </motion.a>
+                            </Magnetic>
                         </div>
 
                         <button
@@ -77,6 +80,15 @@ export default function Navbar() {
                         </button>
                     </div>
                 </div>
+                {/* Scroll Progress Indicator */}
+                <motion.div 
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#1E6FD9] origin-left"
+                    style={{ 
+                        width: "100%", 
+                        scaleX: scrollYProgress,
+                        opacity: isScrolled ? 1 : 0 
+                    }}
+                />
             </motion.nav>
 
             {/* Mobile Drawer */}

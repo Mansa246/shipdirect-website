@@ -38,7 +38,7 @@ export default function Footer() {
               </p>
               <p className="flex items-start gap-2">
                 <span>📍</span>
-                <span>300 Miwate Pvt, Ottawa, ON K1R 0E8</span>
+                <span>Ottawa Drop-off Location (Provided upon confirmation)</span>
               </p>
             </div>
           </div>

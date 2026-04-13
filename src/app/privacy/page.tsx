@@ -112,7 +112,7 @@ export default function PrivacyPage() {
             please contact us:
             <div className="mt-3 bg-[#EEF1F8] rounded-xl p-5 not-prose">
               <p className="font-semibold text-[#0D1F5C]">ShipDirect</p>
-              <p>300 Miwate Pvt, Ottawa, ON K1R 0E8</p>
+              <p>Ottawa Drop-off Location (Provided upon confirmation)</p>
               <p>
                 <a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] hover:underline">
                   info@shipdirect.ca
