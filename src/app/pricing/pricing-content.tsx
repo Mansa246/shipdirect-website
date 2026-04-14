@@ -25,8 +25,8 @@ export default function PricingContent() {
         { icon: "📫", name: "Grande Boîte", descriptor: "Jusqu'à 32 kg", price: "$150 CAD", popular: true, bullets: ["Jusqu'à 32 kg par boîte", "L'option la plus populaire pour les familles", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "🛢️", name: "Baril / Fût", descriptor: "50–60 kg", price: "$250 CAD", bullets: ["Fût/baril standard de 50–60 kg", "Idéal pour les marchandises en vrac", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "🛋️", name: "Sofa / Meuble", descriptor: "Pièce standard", price: "$500 CAD", bullets: ["Pièce de mobilier standard unique", "Doit être correctement emballé/enveloppé", "Contactez-nous pour les articles surdimensionnés"] },
-        { icon: "🚗", name: "Berline", descriptor: "Voiture standard", price: "$1 600 CAD", vehicle: true, bullets: ["Véhicule berline standard", "Contactez-nous pour les détails de préparation", "Les réglementations d'importation sont la responsabilité du client"] },
-        { icon: "🚙", name: "VUS / Camion", descriptor: "Grand véhicule", price: "$1 700 CAD", vehicle: true, bullets: ["VUS, camion ou fourgonnette", "Contactez-nous pour les détails de préparation", "Les réglementations d'importation sont la responsabilité du client"] },
+        { icon: "🚗", name: "Berline", descriptor: "Voiture standard", price: "$1 600 CAD", vehicle: true, bullets: ["Véhicule berline standard", "Contactez-nous pour les détails de préparation", "Droits de douane et frais portuaires inclus"] },
+        { icon: "🚙", name: "VUS / Camion", descriptor: "Grand véhicule", price: "$1 700 CAD", vehicle: true, bullets: ["VUS, camion ou fourgonnette", "Contactez-nous pour les détails de préparation", "Droits de douane et frais portuaires inclus"] },
       ]
     : [
         { icon: "🛍️", name: "Large Bag (Costco Bag)", descriptor: "Standard size", price: "$75 CAD", bullets: ["Standard large (Costco-sized) bag", "Ideal for clothing, household goods", "Drop-off at Ottawa facility"] },
@@ -34,8 +34,8 @@ export default function PricingContent() {
         { icon: "📫", name: "Big Box", descriptor: "Up to 32kg", price: "$150 CAD", popular: true, bullets: ["Up to 32kg per box", "Most popular option for families", "Drop-off at Ottawa facility"] },
         { icon: "🛢️", name: "Baril / Drum", descriptor: "50–60kg", price: "$250 CAD", bullets: ["Standard 50–60kg drum/barrel", "Ideal for bulk goods", "Drop-off at Ottawa facility"] },
         { icon: "🛋️", name: "Sofa / Furniture", descriptor: "Standard piece", price: "$500 CAD", bullets: ["Standard single furniture piece", "Must be properly packed/wrapped", "Contact us for oversized items"] },
-        { icon: "🚗", name: "Sedan", descriptor: "Standard car", price: "$1,600 CAD", vehicle: true, bullets: ["Standard sedan vehicle", "Contact us for preparation details", "Import regulations are client's responsibility"] },
-        { icon: "🚙", name: "SUV / Truck", descriptor: "Large vehicle", price: "$1,700 CAD", vehicle: true, bullets: ["SUV, truck, or van", "Contact us for preparation details", "Import regulations are client's responsibility"] },
+        { icon: "🚗", name: "Sedan", descriptor: "Standard car", price: "$1,600 CAD", vehicle: true, bullets: ["Standard sedan vehicle", "Contact us for preparation details", "Customs duties & port fees included"] },
+        { icon: "🚙", name: "SUV / Truck", descriptor: "Large vehicle", price: "$1,700 CAD", vehicle: true, bullets: ["SUV, truck, or van", "Contact us for preparation details", "Customs duties & port fees included"] },
       ];
 
   const canadaNotes = fr
@@ -43,8 +43,8 @@ export default function PricingContent() {
     : ["Standard: Drop-off at our Ottawa location (address provided upon confirmation)", "Pickup available in Canada for an additional charge (varies by distance)", "Contact us to get a pickup quote before shipping"];
 
   const senegalNotes = fr
-    ? ["Tous les envois arrivent à Keur Massar, Sénégal", "Collecte gratuite à l'établissement de Keur Massar pour les destinataires", "Livraison locale au Sénégal disponible pour un supplément", "Les droits de douane et les frais portuaires sont à la charge du destinataire"]
-    : ["All shipments arrive at Keur Massar, Senegal", "Free pickup at Keur Massar facility for recipients", "Local delivery within Senegal available for an additional charge", "Customs duties and port fees are the recipient's responsibility"];
+    ? ["Tous les envois arrivent à Keur Massar, Sénégal", "Collecte gratuite à l'établissement de Keur Massar pour les destinataires", "Livraison locale au Sénégal disponible pour un supplément", "Les droits de douane, les frais de manutention portuaire et les frais d'importation sont inclus dans nos tarifs B2C"]
+    : ["All shipments arrive at Keur Massar, Senegal", "Free pickup at Keur Massar facility for recipients", "Local delivery within Senegal available for an additional charge", "Customs duties, port handling fees, and import-related charges are included in our B2C pricing"];
 
   return (
     <main>
@@ -65,7 +65,7 @@ export default function PricingContent() {
               </ScrollFadeUp>
               <ScrollFadeUp delay={0.2}>
                 <p className="text-lg text-blue-200 mb-8">
-                  {fr ? "Tous les prix sont pour l'expédition aller simple du Canada vers le Sénégal, en dollars canadiens. Aucuns frais cachés." : "All prices are one-way shipping from Canada to Senegal, in Canadian dollars. No hidden fees."}
+                  {fr ? "Tous les prix sont pour l'expédition aller simple du Canada vers le Sénégal, en dollars canadiens. Les droits de douane, les frais portuaires et les frais d'importation sont inclus. Aucuns frais cachés." : "All prices are one-way shipping from Canada to Senegal, in Canadian dollars. Customs duties, port fees, and import charges are included. No hidden fees."}
                 </p>
               </ScrollFadeUp>
               <ScrollFadeUp delay={0.3}>
@@ -112,9 +112,9 @@ export default function PricingContent() {
           <ScrollFadeUp delay={0.2}>
             <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-5 text-sm text-[#6B7280] text-center">
               {fr ? (
-                <>Tous les prix sont aller simple du Canada au Sénégal, en CAD.{" "}<strong className="text-[#1A1410]">Les droits de douane, les frais portuaires et les frais d&apos;importation au Sénégal sont à la charge du destinataire.</strong>{" "}Les prix sont susceptibles de changer. Contactez-nous pour confirmer les tarifs actuels avant de réserver.</>
+                <>Tous les prix sont aller simple du Canada au Sénégal, en CAD.{" "}<strong className="text-[#1A1410]">Les droits de douane, les frais portuaires et les frais d&apos;importation au Sénégal sont inclus dans nos tarifs B2C.</strong>{" "}Les prix sont susceptibles de changer. Contactez-nous pour confirmer les tarifs actuels avant de réserver.</>
               ) : (
-                <>All prices are one-way from Canada to Senegal, in CAD.{" "}<strong className="text-[#1A1410]">Customs duties, port fees, and import charges in Senegal are the recipient&apos;s responsibility.</strong>{" "}Prices subject to change. Contact us to confirm current rates before booking.</>
+                <>All prices are one-way from Canada to Senegal, in CAD.{" "}<strong className="text-[#1A1410]">Customs duties, port fees, and import-related charges in Senegal are included in our B2C pricing.</strong>{" "}Prices subject to change. Contact us to confirm current rates before booking.</>
               )}
             </div>
           </ScrollFadeUp>
