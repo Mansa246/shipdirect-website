@@ -43,9 +43,9 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 bg-white p-1 rounded-md">
             <Image
-              src="https://assets.cdn.filesafe.space/h3iwnUDSYBMxhYZeIrq4/media/675c4678a08ae6fe23d57d7b.png"
+              src="/logo.png"
               alt="ShipDirect"
               width={150}
               height={50}

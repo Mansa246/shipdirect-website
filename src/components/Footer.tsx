@@ -55,7 +55,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="inline-block bg-white rounded-lg px-3 py-2 mb-4">
               <Image
-                src="https://assets.cdn.filesafe.space/h3iwnUDSYBMxhYZeIrq4/media/675c4678a08ae6fe23d57d7b.png"
+                src="/logo.png"
                 alt="ShipDirect"
                 width={130}
                 height={44}
