@@ -67,11 +67,11 @@ export default function AboutContent() {
                     : "ShipDirect was built with one purpose: to make international shipping between Canada and Senegal simple, reliable, and accessible — for families, communities, and businesses alike."}
                 </p>
               </ScrollFadeUp>
-              <ScrollFadeUp delay={0.3} className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <ScrollFadeUp delay={0.3} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {stats.map((stat, i) => (
                   <div key={i} className="bg-white/10 rounded-2xl px-4 py-4 border border-white/20 text-center">
                     <div className="text-xl font-extrabold text-white mb-1">{stat.value}</div>
-                    <div className="text-xs text-blue-200 leading-tight">{stat.label}</div>
+                    <div className="text-xs text-blue-200 leading-tight md:text-sm">{stat.label}</div>
                   </div>
                 ))}
               </ScrollFadeUp>

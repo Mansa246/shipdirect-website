@@ -43,13 +43,13 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0" onClick={() => setOpen(false)}>
             <Image
               src="/logo.png"
               alt="ShipDirect"
               width={160}
               height={60}
-              className="h-9 lg:h-11 w-auto object-contain mix-blend-multiply"
+              className="h-7 md:h-10 w-auto object-contain mix-blend-multiply"
               priority
             />
           </Link>
@@ -102,43 +102,20 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Mobile: CTA + Hamburger */}
+          {/* Mobile: Hamburger Button Only */}
           <div className="flex lg:hidden items-center gap-2">
-            {/* Mobile language toggle */}
-            <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
-              {(["en", "fr"] as Lang[]).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`px-2 py-1 text-xs font-semibold transition-colors ${
-                    lang === l
-                      ? "bg-[#D42B2B] text-white"
-                      : "text-[#0D1F5C] hover:bg-gray-100"
-                  }`}
-                >
-                  {l === "en" ? "EN" : "FR"}
-                </button>
-              ))}
-            </div>
-
-            <Link
-              href="/quote"
-              className="inline-flex items-center px-4 py-2 bg-[#D42B2B] text-white text-sm font-semibold rounded-lg hover:bg-[#b82424] transition-colors"
-            >
-              {quoteLabel}
-            </Link>
             <button
               onClick={() => setOpen(!open)}
               className="p-2 rounded-md text-[#0D1F5C] hover:bg-gray-100 transition-colors"
               aria-label="Toggle menu"
             >
               {open ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -146,26 +123,56 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu (Full-width dropdown) */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
-          <div className="px-4 py-3 space-y-1">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`block px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                    isActive
-                      ? "text-[#D42B2B] bg-red-50"
-                      : "text-[#0D1F5C] hover:bg-gray-50"
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl max-h-[calc(100vh-64px)] overflow-y-auto">
+          <div className="px-4 py-6 space-y-4">
+            {/* Language Toggle Inside Mobile Menu */}
+            <div className="flex items-center justify-center p-1 bg-gray-50 rounded-lg">
+              {(["en", "fr"] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all ${
+                    lang === l
+                      ? "bg-[#D42B2B] text-white shadow"
+                      : "text-[#0D1F5C] hover:bg-gray-200"
                   }`}
                 >
-                  {lang === "fr" ? link.labelFr : link.labelEn}
-                </Link>
-              );
-            })}
+                  {l === "en" ? "EN (English)" : "FR (Français)"}
+                </button>
+              ))}
+            </div>
+
+            <div className="space-y-1">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                      isActive
+                        ? "text-[#D42B2B] bg-red-50"
+                        : "text-[#0D1F5C] hover:bg-gray-50"
+                    }`}
+                  >
+                    {lang === "fr" ? link.labelFr : link.labelEn}
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="pt-2">
+              <Link
+                href="/quote"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center w-full min-h-[44px] px-4 py-3 bg-[#D42B2B] text-white text-base font-semibold rounded-lg hover:bg-[#b82424] transition-colors"
+              >
+                {quoteLabel}
+              </Link>
+            </div>
           </div>
         </div>
       )}

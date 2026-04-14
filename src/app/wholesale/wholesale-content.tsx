@@ -222,7 +222,7 @@ export default function WholesaleContent() {
           <p className="text-[#6B7280] mb-10">
             {fr ? "Notre service B2B est conçu pour les acheteurs commerciaux qui ont besoin de fiabilité, de volume et d'une chaîne d'approvisionnement propre." : "Our B2B service is designed for commercial buyers who need reliability, volume, and a clean supply chain."}
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {buyerTypes.map((item, i) => (
               <div key={i} className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col items-center gap-3">
                 <span className="text-3xl">{item.icon}</span>
@@ -244,7 +244,7 @@ export default function WholesaleContent() {
               {fr ? "Qualité supérieure, volumes commerciaux, approvisionnement constant." : "Premium quality, commercial volumes, consistent supply."}
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {productCategories.map((cat, i) => (
               <div key={i} className="rounded-2xl overflow-hidden border border-gray-200 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="bg-[#0D1F5C] px-5 py-3 flex items-center gap-3">
@@ -283,7 +283,7 @@ export default function WholesaleContent() {
               {fr ? "Un processus rationalisé conçu pour les acheteurs commerciaux." : "A streamlined process built for commercial buyers."}
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {b2bSteps.map((step, i) => (
               <div key={i} className="bg-white/10 rounded-2xl p-6 border border-white/20">
                 <div className="text-4xl font-extrabold text-[#C4882A] mb-4">{step.n}</div>
@@ -306,7 +306,7 @@ export default function WholesaleContent() {
               {fr ? "Conçu autour des besoins réels des acheteurs commerciaux au Sénégal." : "Built around the real needs of commercial buyers in Senegal."}
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyCards.map((card, i) => (
               <div key={i} className="bg-[#F5F2ED] rounded-2xl border border-gray-200 p-6">
                 <div className="text-3xl mb-3">{card.icon}</div>

@@ -15,7 +15,7 @@ export default function SequencePanel({ src, alt, index }: SequencePanelProps) {
   if (prefersReducedMotion) {
     return (
       <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 shadow-md border border-gray-100">
-        <Image src={src} alt={alt} fill className="object-cover" />
+        <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
       </div>
     );
   }

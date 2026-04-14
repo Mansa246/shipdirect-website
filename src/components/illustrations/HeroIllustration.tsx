@@ -23,11 +23,11 @@ export default function HeroIllustration() {
         className="w-full h-full relative"
       >
         <Image
-          src="/illustrations/hero-illustration.png"
-          alt="ShipDirect - Sending goods from Canada to Senegal"
+          src="/illustrations/hero_landing.png"
+          alt="ShipDirect Box dropping to Senegal map"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          className="object-contain object-center scale-[1.05]"
           priority
         />
         

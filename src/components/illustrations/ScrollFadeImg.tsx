@@ -15,7 +15,7 @@ export default function ScrollFadeImg({ src, alt, priority = false }: ScrollFade
   if (prefersReducedMotion) {
     return (
       <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-        <Image src={src} alt={alt} fill className="object-cover" priority={priority} />
+        <Image src={src} alt={alt} fill className="object-cover" priority={priority} sizes="(max-width: 768px) 100vw, 50vw" />
       </div>
     );
   }

@@ -70,7 +70,7 @@ export default function PricingContent() {
               </ScrollFadeUp>
               <ScrollFadeUp delay={0.3}>
                 <Link href="/quote" passHref legacyBehavior>
-                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
+                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex justify-center items-center min-h-[44px] px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
                     {fr ? "Obtenir un devis pour votre envoi" : "Get a Quote for Your Shipment"}
                   </motion.a>
                 </Link>
@@ -169,7 +169,7 @@ export default function PricingContent() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/quote" passHref legacyBehavior>
-              <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
+              <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex justify-center items-center px-6 py-3 min-h-[44px] bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
                 {fr ? "Obtenir un devis →" : "Get a Quote →"}
               </motion.a>
             </Link>

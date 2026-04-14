@@ -138,7 +138,7 @@ export default function HomeContent() {
 
               <ScrollFadeUp delay={0.3} className="flex flex-wrap gap-4 mb-10">
                 <Link href="/quote" passHref legacyBehavior>
-                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all text-base">
+                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex justify-center items-center px-6 min-h-[44px] bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all text-base">
                     {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
                   </motion.a>
                 </Link>
@@ -204,7 +204,7 @@ export default function HomeContent() {
                   </li>
                 ))}
               </ul>
-              <Link href="/pricing" className="inline-flex items-center px-5 py-2.5 bg-[#D42B2B] text-white font-semibold text-sm rounded-xl hover:bg-[#b82424] transition-colors">
+              <Link href="/pricing" className="inline-flex items-center justify-center min-h-[44px] px-5 bg-[#D42B2B] text-white font-semibold text-base rounded-xl hover:bg-[#b82424] transition-colors">
                 {fr ? "Voir les tarifs →" : "View Pricing →"}
               </Link>
             </div>
@@ -247,14 +247,14 @@ export default function HomeContent() {
               {fr ? "De votre premier message à la livraison au Sénégal — voici le processus." : "From your first message to delivery in Senegal — here's the process."}
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {howItWorksSteps.map((step, i) => (
               <div key={i} className="flex flex-col items-center text-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-[#0D1F5C] text-white flex items-center justify-center text-lg font-extrabold shrink-0">
                   {step.n}
                 </div>
                 <h3 className="font-bold text-[#0D1F5C] text-sm">{step.title}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{step.desc}</p>
+                <p className="text-base md:text-sm text-[#6B7280] leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -277,7 +277,7 @@ export default function HomeContent() {
               {fr ? "Tous les prix en CAD. Expédition aller simple du Canada vers le Sénégal." : "All prices in CAD. One-way shipping from Canada to Senegal."}
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
             {pricingPreview.map((item, i) => (
               <div key={i} className={`relative rounded-2xl border p-6 text-center transition-shadow hover:shadow-md ${item.popular ? "border-[#D42B2B] shadow-sm" : "border-gray-200"}`}>
                 {item.popular && (
@@ -292,13 +292,13 @@ export default function HomeContent() {
               </div>
             ))}
           </div>
-          <p className="text-center text-sm text-[#6B7280] mb-6">
+          <p className="text-center text-base md:text-sm text-[#6B7280] mb-6">
             {fr
               ? <>Nous expédions aussi les meubles (500 $), berlines (1 600 $) et VUS/camions (1 700 $).{" "}<Link href="/pricing" className="text-[#D42B2B] underline font-medium">Voir tous les tarifs →</Link></>
               : <>Also shipping furniture ($500), sedans ($1,600), and SUVs/trucks ($1,700).{" "}<Link href="/pricing" className="text-[#D42B2B] underline font-medium">See full pricing →</Link></>}
           </p>
           <div className="text-center">
-            <Link href="/pricing" className="inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-semibold rounded-xl hover:bg-[#b82424] transition-colors text-sm">
+            <Link href="/pricing" className="inline-flex items-center justify-center min-h-[44px] px-6 bg-[#D42B2B] text-white font-semibold rounded-xl hover:bg-[#b82424] transition-colors text-base">
               {fr ? "Page de tarification complète →" : "Full Pricing Page →"}
             </Link>
           </div>
@@ -321,7 +321,7 @@ export default function HomeContent() {
               <div key={i} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-3">{card.icon}</div>
                 <h3 className="font-bold text-[#0D1F5C] mb-2">{card.title}</h3>
-                <p className="text-sm text-[#6B7280] leading-relaxed">{card.desc}</p>
+                <p className="text-base text-[#6B7280] leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -339,7 +339,7 @@ export default function HomeContent() {
             {fr ? "Obtenez votre devis gratuit aujourd'hui. Notre équipe est prête à vous aider à expédier des colis, des meubles, des véhicules et plus encore — directement au Sénégal." : "Get your free quote today. Our team is ready to help you ship packages, furniture, vehicles, and more — directly to Senegal."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors">
+            <Link href="/quote" className="shimmer-btn inline-flex justify-center items-center min-h-[44px] px-6 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors text-base">
               {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
             </Link>
             <a href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
@@ -383,7 +383,7 @@ export default function HomeContent() {
             <div>
               <div className="text-2xl mb-2">📍</div>
               <div className="font-semibold text-sm mb-1">{fr ? "Emplacement" : "Location"}</div>
-              <p className="text-blue-200 text-sm">{fr ? "Dépôt Ottawa (Fourni après confirmation)" : "Ottawa Drop-off (Provided upon confirmation)"}</p>
+              <p className="text-blue-200 text-base md:text-sm">{fr ? "Dépôt Ottawa (Fourni après confirmation)" : "Ottawa Drop-off (Provided upon confirmation)"}</p>
             </div>
           </div>
         </div>

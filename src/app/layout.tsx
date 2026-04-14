@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   title: "ShipDirect | Canada to Senegal Shipping & Export",
   description:
     "Ship anything from Canada to Senegal. Personal shipping (boxes, barrels, furniture, vehicles) and wholesale B2B export. Flat-rate CAD pricing. Ottawa drop-off. Keur Massar delivery.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon-32x32.png",
+  },
 };
 
 export default function RootLayout({
