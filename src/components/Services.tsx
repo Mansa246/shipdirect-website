@@ -12,7 +12,7 @@ export default function Services() {
         { icon: PackageOpen, name: "Big Boxes", price: "$150", detail: "32kg max weight", featured: false },
         { icon: Archive, name: "Baril", price: "$250", detail: "50–60kg", featured: false },
         { icon: Armchair, name: "Sofa", price: "$500", detail: "3-seat sofa", featured: false },
-        { icon: ShoppingBag, name: "Costco Bag", price: "$75", detail: "Standard size", featured: false },
+        { icon: ShoppingBag, name: "Large Bag (Costco Bag)", price: "$75", detail: "Standard size", featured: false },
         { icon: Car, name: "Sedan", price: "$1,600", detail: "Full vehicle shipping", featured: false },
         { icon: Truck, name: "SUV", price: "$1,700", detail: "Full vehicle shipping", featured: false },
         { icon: PackageCheck, name: "Custom Quote", price: "", detail: "Contact us for a custom quote", featured: true },

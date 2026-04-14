@@ -20,7 +20,7 @@ export default function PricingContent() {
 
   const pricingTiers = fr
     ? [
-        { icon: "🛍️", name: "Sac Costco", descriptor: "Taille standard", price: "$75 CAD", bullets: ["Sac taille Costco standard", "Idéal pour vêtements, articles ménagers", "Dépôt à l'établissement d'Ottawa"] },
+        { icon: "🛍️", name: "Grand Sac (Sac Costco)", descriptor: "Taille standard", price: "$75 CAD", bullets: ["Grand sac (taille Costco) standard", "Idéal pour vêtements, articles ménagers", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "📦", name: "Petite Boîte", descriptor: "Jusqu'à 23 kg", price: "$100 CAD", bullets: ["Jusqu'à 23 kg par boîte", "Convient à la plupart des articles ménagers", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "📫", name: "Grande Boîte", descriptor: "Jusqu'à 32 kg", price: "$150 CAD", popular: true, bullets: ["Jusqu'à 32 kg par boîte", "L'option la plus populaire pour les familles", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "🛢️", name: "Baril / Fût", descriptor: "50–60 kg", price: "$250 CAD", bullets: ["Fût/baril standard de 50–60 kg", "Idéal pour les marchandises en vrac", "Dépôt à l'établissement d'Ottawa"] },
@@ -29,7 +29,7 @@ export default function PricingContent() {
         { icon: "🚙", name: "VUS / Camion", descriptor: "Grand véhicule", price: "$1 700 CAD", vehicle: true, bullets: ["VUS, camion ou fourgonnette", "Contactez-nous pour les détails de préparation", "Les réglementations d'importation sont la responsabilité du client"] },
       ]
     : [
-        { icon: "🛍️", name: "Costco Bag", descriptor: "Standard size", price: "$75 CAD", bullets: ["Standard Costco-sized bag", "Ideal for clothing, household goods", "Drop-off at Ottawa facility"] },
+        { icon: "🛍️", name: "Large Bag (Costco Bag)", descriptor: "Standard size", price: "$75 CAD", bullets: ["Standard large (Costco-sized) bag", "Ideal for clothing, household goods", "Drop-off at Ottawa facility"] },
         { icon: "📦", name: "Small Box", descriptor: "Up to 23kg", price: "$100 CAD", bullets: ["Up to 23kg per box", "Suitable for most household items", "Drop-off at Ottawa facility"] },
         { icon: "📫", name: "Big Box", descriptor: "Up to 32kg", price: "$150 CAD", popular: true, bullets: ["Up to 32kg per box", "Most popular option for families", "Drop-off at Ottawa facility"] },
         { icon: "🛢️", name: "Baril / Drum", descriptor: "50–60kg", price: "$250 CAD", bullets: ["Standard 50–60kg drum/barrel", "Ideal for bulk goods", "Drop-off at Ottawa facility"] },

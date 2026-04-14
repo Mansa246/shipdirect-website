@@ -53,13 +53,13 @@ export default function HomeContent() {
 
   const pricingPreview = fr
     ? [
-        { icon: "🛍️", name: "Sac Costco", price: "$75 CAD" },
+        { icon: "🛍️", name: "Grand Sac (Sac Costco)", price: "$75 CAD" },
         { icon: "📦", name: "Petite Boîte (23kg)", price: "$100 CAD" },
         { icon: "📫", name: "Grande Boîte (32kg)", price: "$150 CAD", popular: true },
         { icon: "🛢️", name: "Baril / Fût (50–60kg)", price: "$250 CAD" },
       ]
     : [
-        { icon: "🛍️", name: "Costco Bag", price: "$75 CAD" },
+        { icon: "🛍️", name: "Large Bag (Costco Bag)", price: "$75 CAD" },
         { icon: "📦", name: "Small Box (23kg)", price: "$100 CAD" },
         { icon: "📫", name: "Big Box (32kg)", price: "$150 CAD", popular: true },
         { icon: "🛢️", name: "Baril / Drum (50–60kg)", price: "$250 CAD" },
@@ -70,7 +70,7 @@ export default function HomeContent() {
         { icon: "🎯", title: "Expertise spécialisée", desc: "Nous nous concentrons exclusivement sur le Canada vers le Sénégal. Cette spécialisation signifie de meilleurs processus, moins de délais et moins de surprises." },
         { icon: "💰", title: "Tarification fixe transparente", desc: "Sachez exactement ce que vous paierez avant d'expédier. Tarifs clairs en CAD. Aucuns frais cachés." },
         { icon: "👨‍👩‍👧", title: "Centré sur la famille et la communauté", desc: "Nous servons la diaspora sénégalaise au Canada. Nous savons que vous n'envoyez pas seulement des marchandises — vous envoyez un soutien à la maison." },
-        { icon: "🚗", title: "Tout s'expédie — y compris les véhicules", desc: "D'un sac Costco à un VUS complet, nous avons la capacité et le réseau logistique pour gérer toutes les tailles." },
+        { icon: "🚗", title: "Tout s'expédie — y compris les véhicules", desc: "D'un grand sac (Sac Costco) à un VUS complet, nous avons la capacité et le réseau logistique pour gérer toutes les tailles." },
         { icon: "📍", title: "Emplacement pratique à Ottawa", desc: "Déposez à notre établissement d'Ottawa ou organisez un ramassage. Collectez à Keur Massar ou demandez une livraison locale au Sénégal." },
         { icon: "🤝", title: "Capable en B2B et gros", desc: "Nous approvisionnons et exportons des volumes commerciaux de produits canadiens pour les acheteurs en gros au Sénégal. Prêt pour le commerce, fiable, responsable." },
       ]
@@ -78,21 +78,21 @@ export default function HomeContent() {
         { icon: "🎯", title: "Specialized Route Expertise", desc: "We focus exclusively on Canada-to-Senegal. That specialization means better processes, fewer delays, and fewer surprises." },
         { icon: "💰", title: "Transparent Flat-Rate Pricing", desc: "Know exactly what you'll pay before you ship. Clear rates in CAD. No hidden fees." },
         { icon: "👨‍👩‍👧", title: "Family & Community-Focused", desc: "We serve the Senegalese diaspora in Canada. We know you're not just sending goods — you're sending support home." },
-        { icon: "🚗", title: "Everything Ships — Including Vehicles", desc: "From a Costco bag to a full SUV, we have the capacity and logistics network to handle every size." },
+        { icon: "🚗", title: "Everything Ships — Including Vehicles", desc: "From a large bag (Costco bag) to a full SUV, we have the capacity and logistics network to handle every size." },
         { icon: "📍", title: "Convenient Ottawa Location", desc: "Drop off at our Ottawa facility or arrange pickup. Collect in Keur Massar or request Senegal local delivery." },
         { icon: "🤝", title: "B2B & Wholesale Capable", desc: "We supply and export commercial volumes of Canadian goods to wholesale buyers in Senegal. Trade-ready, reliable, accountable." },
       ];
 
   const faqPreview = fr
     ? [
-        { q: "Que puis-je expédier du Canada au Sénégal ?", a: "Vous pouvez expédier une large gamme de biens personnels incluant vêtements, articles ménagers, nourriture, électronique, meubles (sofas, tables) et véhicules (berlines, VUS, camions). Nous expédions via des sacs Costco, petites boîtes, grandes boîtes, barils/fûts et exportation complète de véhicules. Contactez-nous si vous n'êtes pas sûr d'un article spécifique." },
+        { q: "Que puis-je expédier du Canada au Sénégal ?", a: "Vous pouvez expédier une large gamme de biens personnels incluant vêtements, articles ménagers, nourriture, électronique, meubles (sofas, tables) et véhicules (berlines, VUS, camions). Nous expédions via des grands sacs (Sac Costco), petites boîtes, grandes boîtes, barils/fûts et exportation complète de véhicules. Contactez-nous si vous n'êtes pas sûr d'un article spécifique." },
         { q: "Les prix incluent-ils la douane ou les frais portuaires ?", a: "Non. Nos prix couvrent uniquement l'expédition du Canada vers le Sénégal. Les droits de douane, les frais de manutention portuaire et tous les frais liés à l'importation au Sénégal sont à la charge du destinataire." },
         { q: "Offrez-vous le ramassage au Canada ?", a: "Oui, nous pouvons organiser le ramassage au Canada pour un supplément. Les frais dépendent de votre emplacement et de la distance de notre établissement d'Ottawa. Contactez-nous au 613-700-2747 ou info@shipdirect.ca pour demander un devis de ramassage." },
         { q: "Où puis-je collecter mon envoi au Sénégal ?", a: "Tous les envois B2C arrivent à notre établissement de Keur Massar au Sénégal. Les destinataires collectent leurs marchandises là-bas sans frais supplémentaires. Nous vous notifierons lorsque votre envoi sera prêt." },
         { q: "Puis-je expédier une voiture ou un véhicule ?", a: "Oui. Nous expédions les berlines pour 1 600 $ CAD et les VUS ou camions pour 1 700 $ CAD, aller simple. Contactez-nous pour discuter des exigences de préparation du véhicule et de la documentation nécessaire." },
       ]
     : [
-        { q: "What can I ship from Canada to Senegal?", a: "You can ship a wide range of personal goods including clothing, household items, food, electronics, furniture (sofas, tables), and vehicles (sedans, SUVs, trucks). We ship via Costco bags, small boxes, large boxes, barrels/drums, and full vehicle export. Contact us if you're unsure about a specific item." },
+        { q: "What can I ship from Canada to Senegal?", a: "You can ship a wide range of personal goods including clothing, household items, food, electronics, furniture (sofas, tables), and vehicles (sedans, SUVs, trucks). We ship via large bags (Costco bags), small boxes, large boxes, barrels/drums, and full vehicle export. Contact us if you're unsure about a specific item." },
         { q: "Do prices include customs or port fees?", a: "No. Our listed prices cover shipping from Canada to Senegal only. Customs duties, port handling fees, and any import-related charges in Senegal are the recipient's responsibility." },
         { q: "Do you offer pickup in Canada?", a: "Yes, we can arrange pickup in Canada for an additional charge. The fee depends on your location and distance from our Ottawa facility. Contact us at 613-700-2747 or info@shipdirect.ca to request a pickup quote." },
         { q: "Where do I collect my shipment in Senegal?", a: "All B2C shipments arrive at our Keur Massar facility in Senegal. Recipients collect their goods there at no additional charge. We'll notify you when your shipment is ready." },
@@ -100,8 +100,8 @@ export default function HomeContent() {
       ];
 
   const b2cList = fr
-    ? ["Sacs Costco, petites et grandes boîtes, barils", "Meubles et articles surdimensionnés", "Véhicules (berlines, VUS, camions)", "Dépôt à Ottawa ou ramassage payant disponible", "Collecte à Keur Massar ou livraison locale payante au Sénégal"]
-    : ["Costco bags, small & big boxes, barrels", "Furniture and oversized items", "Vehicles (sedans, SUVs, trucks)", "Drop-off in Ottawa or paid pickup available", "Pickup in Keur Massar or paid local delivery in Senegal"];
+    ? ["Grands sacs (Sac Costco), petites et grandes boîtes, barils", "Meubles et articles surdimensionnés", "Véhicules (berlines, VUS, camions)", "Dépôt à Ottawa ou ramassage payant disponible", "Collecte à Keur Massar ou livraison locale payante au Sénégal"]
+    : ["Large bags (Costco bags), small & big boxes, barrels", "Furniture and oversized items", "Vehicles (sedans, SUVs, trucks)", "Drop-off in Ottawa or paid pickup available", "Pickup in Keur Massar or paid local delivery in Senegal"];
 
   const b2bList = fr
     ? ["Approvisionnement direct en produits du Canada", "Pois chiches, pois, lentilles, haricots, épices et plus", "Coordination d'exportation et livraison au port", "Les entreprises gèrent le dédouanement portuaire en aval", "Devis B2B dédiés et support de compte"]

@@ -10,7 +10,7 @@ export default function WhatWeShip() {
         { icon: PackageOpen, name: "Big Boxes", price: "$150", detail: "32kg max weight" },
         { icon: Archive, name: "Baril", price: "$250", detail: "50–60kg" },
         { icon: Armchair, name: "Sofa", price: "$500", detail: "3-seat sofa" },
-        { icon: ShoppingBag, name: "Costco Bag", price: "$75", detail: "Standard size" },
+        { icon: ShoppingBag, name: "Large Bag (Costco Bag)", price: "$75", detail: "Standard size" },
         { icon: Car, name: "Sedan", price: "$1,600", detail: "Full vehicle shipping" },
         { icon: Truck, name: "SUV", price: "$1,700", detail: "Full vehicle shipping" },
     ];
