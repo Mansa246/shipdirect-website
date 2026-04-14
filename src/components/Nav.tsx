@@ -47,9 +47,9 @@ export default function Nav() {
             <Image
               src="/logo.png"
               alt="ShipDirect"
-              width={240}
-              height={80}
-              className="h-10 md:h-14 w-auto object-contain mix-blend-multiply"
+              width={772}
+              height={511}
+              className="h-[48px] lg:h-[64px] w-auto object-contain mix-blend-multiply"
               priority
             />
           </Link>

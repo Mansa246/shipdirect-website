@@ -53,13 +53,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="inline-block bg-white rounded-[14px] px-4 py-3 mb-6 shadow-sm">
+            <div className="inline-block bg-white rounded-xl px-4 py-3 mb-6 shadow-sm overflow-hidden">
               <Image
                 src="/logo.png"
                 alt="ShipDirect"
-                width={240}
-                height={80}
-                className="h-12 md:h-16 w-auto object-contain mix-blend-multiply"
+                width={772}
+                height={511}
+                className="h-[80px] w-auto object-contain mix-blend-multiply"
               />
             </div>
             <p className="text-sm text-blue-200 leading-relaxed mb-5">
