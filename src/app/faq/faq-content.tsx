@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import FaqAccordion from "@/components/FaqAccordion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
+import { motion } from "framer-motion";
 
 export default function FaqContent() {
   const { lang } = useLanguage();
@@ -61,24 +64,37 @@ export default function FaqContent() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="bg-[#0D1F5C] text-white py-20 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
-            {fr ? "❓ Centre d'aide" : "❓ Help Centre"}
+      <section className="bg-[#0D1F5C] text-white py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <ScrollFadeUp>
+                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
+                  {fr ? "❓ Centre d'aide" : "❓ Help Centre"}
+                </div>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                  {fr ? "Questions fréquemment posées" : "Frequently Asked Questions"}
+                </h1>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.2}>
+                <p className="text-lg text-blue-200 leading-relaxed max-w-xl">
+                  {fr ? "Tout ce que vous devez savoir sur l'expédition et l'exportation en gros avec ShipDirect." : "Everything you need to know about shipping and wholesale export with ShipDirect."}
+                </p>
+              </ScrollFadeUp>
+            </div>
+            <ScrollFadeUp delay={0.3}>
+              <ScrollFadeImg src="/illustrations/faq_relaxed_reader_illustration.png" alt="Relaxed ShipDirect Customer Reading FAQs" priority />
+            </ScrollFadeUp>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-            {fr ? "Questions fréquemment posées" : "Frequently Asked Questions"}
-          </h1>
-          <p className="text-lg text-blue-200">
-            {fr ? "Tout ce que vous devez savoir sur l'expédition et l'exportation en gros avec ShipDirect." : "Everything you need to know about shipping and wholesale export with ShipDirect."}
-          </p>
         </div>
       </section>
 
       {/* ── FAQ CONTENT ── */}
       <section className="py-20 bg-[#F5F2ED]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          <div>
+          <ScrollFadeUp>
             <div className="flex items-center gap-3 mb-6">
               <span className="text-2xl">📦</span>
               <h2 className="text-xl font-extrabold text-[#0D1F5C]">
@@ -86,8 +102,9 @@ export default function FaqContent() {
               </h2>
             </div>
             <FaqAccordion items={b2cFaqs} />
-          </div>
-          <div>
+          </ScrollFadeUp>
+          
+          <ScrollFadeUp delay={0.1}>
             <div className="flex items-center gap-3 mb-6">
               <span className="text-2xl">🏭</span>
               <h2 className="text-xl font-extrabold text-[#0D1F5C]">
@@ -95,13 +112,13 @@ export default function FaqContent() {
               </h2>
             </div>
             <FaqAccordion items={b2bFaqs} />
-          </div>
+          </ScrollFadeUp>
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="py-16 bg-[#0D1F5C]">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollFadeUp className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
             {fr ? "Vous avez encore des questions ?" : "Still Have Questions?"}
           </h2>
@@ -109,14 +126,14 @@ export default function FaqContent() {
             {fr ? "Notre équipe est heureuse de vous aider. Contactez-nous et nous répondrons rapidement." : "Our team is happy to help. Reach out and we'll respond quickly."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:info@shipdirect.ca" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors">
+            <motion.a whileHover={{ scale: 1.03 }} href="mailto:info@shipdirect.ca" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
               ✉️ info@shipdirect.ca
-            </a>
-            <a href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.03 }} href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
               📞 613-700-2747
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
     </main>
   );

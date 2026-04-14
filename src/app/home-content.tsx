@@ -5,6 +5,9 @@ import { useEffect } from "react";
 import TrustBar from "@/components/TrustBar";
 import FaqAccordion from "@/components/FaqAccordion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import HeroIllustration from "@/components/illustrations/HeroIllustration";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import { motion } from "framer-motion";
 
 export default function HomeContent() {
   const { lang } = useLanguage();
@@ -111,32 +114,42 @@ export default function HomeContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-6">
-                {fr ? "🚢 Canada → Sénégal Expédition" : "🚢 Canada → Senegal Shipping"}
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                {fr ? (
-                  <>Expédiez n&apos;importe quoi.{" "}<span className="text-[#D42B2B]">Partout au Sénégal.</span>{" "}Nous gérons le reste.</>
-                ) : (
-                  <>Ship Anything.{" "}<span className="text-[#D42B2B]">Anywhere in Senegal.</span>{" "}We Handle the Rest.</>
-                )}
-              </h1>
-              <p className="text-lg text-blue-200 leading-relaxed mb-8 max-w-lg">
-                {fr
-                  ? "Des colis personnels et barils aux véhicules et exportations en gros — ShipDirect connecte le Canada au Sénégal avec des tarifs transparents, une logistique fiable et un service de confiance."
-                  : "From personal packages and barrels to vehicles and wholesale exports — ShipDirect connects Canada to Senegal with transparent pricing, reliable logistics, and trusted service."}
-              </p>
+              <ScrollFadeUp>
+                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-6">
+                  {fr ? "🚢 Canada → Sénégal Expédition" : "🚢 Canada → Senegal Shipping"}
+                </div>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                  {fr ? (
+                    <>Expédiez n&apos;importe quoi.{" "}<span className="text-[#D42B2B]">Partout au Sénégal.</span>{" "}Nous gérons le reste.</>
+                  ) : (
+                    <>Ship Anything.{" "}<span className="text-[#D42B2B]">Anywhere in Senegal.</span>{" "}We Handle the Rest.</>
+                  )}
+                </h1>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.2}>
+                <p className="text-lg text-blue-200 leading-relaxed mb-8 max-w-lg">
+                  {fr
+                    ? "Des colis personnels et barils aux véhicules et exportations en gros — ShipDirect connecte le Canada au Sénégal avec des tarifs transparents, une logistique fiable et un service de confiance."
+                    : "From personal packages and barrels to vehicles and wholesale exports — ShipDirect connects Canada to Senegal with transparent pricing, reliable logistics, and trusted service."}
+                </p>
+              </ScrollFadeUp>
 
-              <div className="flex flex-wrap gap-4 mb-10">
-                <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors text-base">
-                  {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
+              <ScrollFadeUp delay={0.3} className="flex flex-wrap gap-4 mb-10">
+                <Link href="/quote" passHref legacyBehavior>
+                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all text-base">
+                    {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
+                  </motion.a>
                 </Link>
-                <Link href="/pricing" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors text-base">
-                  {fr ? "Voir les tarifs" : "View Pricing"}
+                <Link href="/pricing" passHref legacyBehavior>
+                  <motion.a whileHover={{ scale: 1.03 }} className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors text-base">
+                    {fr ? "Voir les tarifs" : "View Pricing"}
+                  </motion.a>
                 </Link>
-              </div>
+              </ScrollFadeUp>
 
-              <div className="flex flex-wrap gap-6">
+              <ScrollFadeUp delay={0.4} className="flex flex-wrap gap-6">
                 {(fr
                   ? [{ value: "Ottawa", label: "Point de dépôt" }, { value: "Keur Massar", label: "Destination, Sénégal" }, { value: "B2C + B2B", label: "Personnel et Grossiste" }]
                   : [{ value: "Ottawa", label: "Drop-off Location" }, { value: "Keur Massar", label: "Destination, Senegal" }, { value: "B2C + B2B", label: "Personal & Wholesale" }]
@@ -146,20 +159,13 @@ export default function HomeContent() {
                     <span className="text-xs text-blue-300">{stat.label}</span>
                   </div>
                 ))}
-              </div>
+              </ScrollFadeUp>
             </div>
 
-            {/* Right: floating pricing cards */}
-            <div className="relative flex flex-col gap-3">
-              {heroCards.map((card, i) => (
-                <div key={i} className="float-card bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-4 flex items-center justify-between" style={{ animationDelay: `${i * 0.4}s` }}>
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{card.icon}</span>
-                    <span className={`font-semibold text-sm ${card.gold ? "text-[#C4882A]" : "text-white"}`}>{card.name}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Right: Illustration */}
+            <ScrollFadeUp delay={0.2} className="relative flex flex-col gap-3">
+              <HeroIllustration />
+            </ScrollFadeUp>
           </div>
         </div>
       </section>

@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useEffect } from "react";
 import PricingCard from "@/components/PricingCard";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
+import { motion } from "framer-motion";
 
 export default function PricingContent() {
   const { lang } = useLanguage();
@@ -46,59 +49,81 @@ export default function PricingContent() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="bg-[#0D1F5C] text-white py-20 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
-            {fr ? "💰 Tarifs transparents" : "💰 Transparent Rates"}
+      <section className="bg-[#0D1F5C] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <ScrollFadeUp>
+                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
+                  {fr ? "💰 Tarifs transparents" : "💰 Transparent Rates"}
+                </div>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+                  {fr ? "Tarification simple et forfaitaire" : "Simple, Flat-Rate Pricing"}
+                </h1>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.2}>
+                <p className="text-lg text-blue-200 mb-8">
+                  {fr ? "Tous les prix sont pour l'expédition aller simple du Canada vers le Sénégal, en dollars canadiens. Aucuns frais cachés." : "All prices are one-way shipping from Canada to Senegal, in Canadian dollars. No hidden fees."}
+                </p>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.3}>
+                <Link href="/quote" passHref legacyBehavior>
+                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
+                    {fr ? "Obtenir un devis pour votre envoi" : "Get a Quote for Your Shipment"}
+                  </motion.a>
+                </Link>
+              </ScrollFadeUp>
+            </div>
+
+            <ScrollFadeUp delay={0.2}>
+              <ScrollFadeImg src="/illustrations/pricing_quote_illustration.png" alt="Viewing pricing online and shipping box" priority />
+            </ScrollFadeUp>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-            {fr ? "Tarification simple et forfaitaire" : "Simple, Flat-Rate Pricing"}
-          </h1>
-          <p className="text-lg text-blue-200 mb-8">
-            {fr ? "Tous les prix sont pour l'expédition aller simple du Canada vers le Sénégal, en dollars canadiens. Aucuns frais cachés." : "All prices are one-way shipping from Canada to Senegal, in Canadian dollars. No hidden fees."}
-          </p>
-          <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors">
-            {fr ? "Obtenir un devis pour votre envoi" : "Get a Quote for Your Shipment"}
-          </Link>
         </div>
       </section>
 
       {/* ── PRICING GRID ── */}
       <section className="py-20 bg-[#F5F2ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-            {pricingTiers.slice(0, 5).map((tier, i) => (
-              <PricingCard
-                key={i}
-                {...tier}
-                popularLabel={fr ? "Le plus populaire" : "Most Popular"}
-                oneWayLabel={fr ? "Aller simple" : "One Way"}
-              />
-            ))}
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {pricingTiers.slice(5).map((tier, i) => (
-              <PricingCard
-                key={i}
-                {...tier}
-                oneWayLabel={fr ? "Aller simple" : "One Way"}
-              />
-            ))}
-          </div>
+          <ScrollFadeUp>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {pricingTiers.slice(0, 5).map((tier, i) => (
+                <PricingCard
+                  key={i}
+                  {...tier}
+                  popularLabel={fr ? "Le plus populaire" : "Most Popular"}
+                  oneWayLabel={fr ? "Aller simple" : "One Way"}
+                />
+              ))}
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {pricingTiers.slice(5).map((tier, i) => (
+                <PricingCard
+                  key={i}
+                  {...tier}
+                  oneWayLabel={fr ? "Aller simple" : "One Way"}
+                />
+              ))}
+            </div>
+          </ScrollFadeUp>
 
-          <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-5 text-sm text-[#6B7280] text-center">
-            {fr ? (
-              <>Tous les prix sont aller simple du Canada au Sénégal, en CAD.{" "}<strong className="text-[#1A1410]">Les droits de douane, les frais portuaires et les frais d&apos;importation au Sénégal sont à la charge du destinataire.</strong>{" "}Les prix sont susceptibles de changer. Contactez-nous pour confirmer les tarifs actuels avant de réserver.</>
-            ) : (
-              <>All prices are one-way from Canada to Senegal, in CAD.{" "}<strong className="text-[#1A1410]">Customs duties, port fees, and import charges in Senegal are the recipient&apos;s responsibility.</strong>{" "}Prices subject to change. Contact us to confirm current rates before booking.</>
-            )}
-          </div>
+          <ScrollFadeUp delay={0.2}>
+            <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-5 text-sm text-[#6B7280] text-center">
+              {fr ? (
+                <>Tous les prix sont aller simple du Canada au Sénégal, en CAD.{" "}<strong className="text-[#1A1410]">Les droits de douane, les frais portuaires et les frais d&apos;importation au Sénégal sont à la charge du destinataire.</strong>{" "}Les prix sont susceptibles de changer. Contactez-nous pour confirmer les tarifs actuels avant de réserver.</>
+              ) : (
+                <>All prices are one-way from Canada to Senegal, in CAD.{" "}<strong className="text-[#1A1410]">Customs duties, port fees, and import charges in Senegal are the recipient&apos;s responsibility.</strong>{" "}Prices subject to change. Contact us to confirm current rates before booking.</>
+              )}
+            </div>
+          </ScrollFadeUp>
         </div>
       </section>
 
       {/* ── IMPORTANT NOTES ── */}
       <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollFadeUp className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-extrabold text-[#0D1F5C] mb-8 text-center">
             {fr ? "Notes importantes sur l'expédition" : "Important Shipping Notes"}
           </h2>
@@ -130,12 +155,12 @@ export default function PricingContent() {
               </ul>
             </div>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
 
       {/* ── CTA BAND ── */}
       <section className="bg-[#0D1F5C] py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollFadeUp className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
             {fr ? "Vous n'êtes pas sûr de ce qui s'applique à votre envoi ?" : "Not Sure What Applies to Your Shipment?"}
           </h2>
@@ -143,14 +168,16 @@ export default function PricingContent() {
             {fr ? "Contactez-nous directement et nous vous aiderons à choisir la bonne option." : "Contact us directly and we'll help you choose the right option."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors">
-              {fr ? "Obtenir un devis →" : "Get a Quote →"}
+            <Link href="/quote" passHref legacyBehavior>
+              <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
+                {fr ? "Obtenir un devis →" : "Get a Quote →"}
+              </motion.a>
             </Link>
-            <a href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
+            <motion.a whileHover={{ scale: 1.03 }} href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
               {fr ? "Appeler le 613-700-2747" : "Call 613-700-2747"}
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
     </main>
   );

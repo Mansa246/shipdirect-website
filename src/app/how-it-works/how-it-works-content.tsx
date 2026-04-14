@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import SequencePanel from "@/components/illustrations/SequencePanel";
+import { motion } from "framer-motion";
 
 export default function HowItWorksContent() {
   const { lang } = useLanguage();
@@ -43,40 +46,60 @@ export default function HowItWorksContent() {
       {/* ── HERO ── */}
       <section className="bg-[#0D1F5C] text-white py-20 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
-            {fr ? "📋 Étape par étape" : "📋 Step-by-Step"}
+          <ScrollFadeUp>
+            <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
+              {fr ? "📋 Étape par étape" : "📋 Step-by-Step"}
+            </div>
+          </ScrollFadeUp>
+          <ScrollFadeUp delay={0.1}>
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+              {fr ? "Comment fonctionne l'expédition" : "How Shipping Works"}
+            </h1>
+          </ScrollFadeUp>
+          <ScrollFadeUp delay={0.2}>
+            <p className="text-lg text-blue-200">
+              {fr
+                ? "De votre premier message jusqu'à la livraison au Sénégal — voici exactement ce à quoi vous attendre lorsque vous expédiez avec ShipDirect."
+                : "From your first message to delivery in Senegal — here's exactly what to expect when you ship with ShipDirect."}
+            </p>
+          </ScrollFadeUp>
+        </div>
+      </section>
+
+      {/* ── 4-PANEL ILLUSTRATION SEQUENCE ── */}
+      <section className="pt-20 pb-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <SequencePanel index={0} src="/illustrations/how_it_works_panel1.png" alt="Packing personal goods at home" />
+            <SequencePanel index={1} src="/illustrations/how_it_works_panel2.png" alt="Handing box to ShipDirect agent" />
+            <SequencePanel index={2} src="/illustrations/how_it_works_panel3.png" alt="Loading ShipDirect cargo into airplane" />
+            <SequencePanel index={3} src="/illustrations/how_it_works_panel4.png" alt="Joyful family in Senegal receiving package" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-            {fr ? "Comment fonctionne l'expédition" : "How Shipping Works"}
-          </h1>
-          <p className="text-lg text-blue-200">
-            {fr
-              ? "De votre premier message jusqu'à la livraison au Sénégal — voici exactement ce à quoi vous attendre lorsque vous expédiez avec ShipDirect."
-              : "From your first message to delivery in Senegal — here's exactly what to expect when you ship with ShipDirect."}
-          </p>
         </div>
       </section>
 
       {/* ── 5-STEP PROCESS ── */}
-      <section className="py-20 bg-white">
+      <section className="pb-20 pt-10 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative space-y-12">
             <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-[#EEF1F8] hidden md:block" />
             {steps.map((step, i) => (
-              <div key={i} className="relative flex gap-8">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#0D1F5C] text-white flex items-center justify-center text-base font-extrabold z-10">
-                  {step.n}
-                </div>
-                <div className="flex-1 pb-2">
-                  <h2 className="text-xl font-extrabold text-[#0D1F5C] mb-3">
-                    {fr ? `Étape ${step.n} : ${step.title}` : `Step ${step.n}: ${step.title}`}
-                  </h2>
-                  <p className="text-[#1A1410] leading-relaxed mb-4">{step.desc}</p>
-                  <div className="inline-flex items-start gap-2 bg-[#EEF1F8] rounded-xl px-4 py-2.5 text-sm text-[#0D1F5C] font-medium">
-                    {step.note}
+              <ScrollFadeUp key={i} delay={0.1}>
+                <div className="relative flex gap-8">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#0D1F5C] text-white flex items-center justify-center text-base font-extrabold z-10">
+                    {step.n}
+                  </div>
+                  <div className="flex-1 pb-2">
+                    <h2 className="text-xl font-extrabold text-[#0D1F5C] mb-3">
+                      {fr ? `Étape ${step.n} : ${step.title}` : `Step ${step.n}: ${step.title}`}
+                    </h2>
+                    <p className="text-[#1A1410] leading-relaxed mb-4">{step.desc}</p>
+                    <div className="inline-flex items-start gap-2 bg-[#EEF1F8] rounded-xl px-4 py-2.5 text-sm text-[#0D1F5C] font-medium">
+                      {step.note}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollFadeUp>
             ))}
           </div>
         </div>
@@ -121,7 +144,7 @@ export default function HowItWorksContent() {
 
       {/* ── CTA BAND ── */}
       <section className="bg-[#0D1F5C] py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollFadeUp className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
             {fr ? "Prêt à commencer ?" : "Ready to Get Started?"}
           </h2>
@@ -129,14 +152,18 @@ export default function HowItWorksContent() {
             {fr ? "Remplissez notre formulaire de devis et nous nous occupons du reste." : "Fill out our quote form and we'll take it from there."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors">
-              {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
+            <Link href="/quote" passHref legacyBehavior>
+              <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
+                {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
+              </motion.a>
             </Link>
-            <Link href="/faq" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
-              {fr ? "Lire la FAQ" : "Read FAQs"}
+            <Link href="/faq" passHref legacyBehavior>
+              <motion.a whileHover={{ scale: 1.03 }} className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
+                {fr ? "Lire la FAQ" : "Read FAQs"}
+              </motion.a>
             </Link>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
     </main>
   );

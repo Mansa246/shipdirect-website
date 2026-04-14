@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import QuoteForm from "@/components/QuoteForm";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
+import { motion } from "framer-motion";
 
 export default function ContactContent() {
   const { lang } = useLanguage();
@@ -17,19 +20,32 @@ export default function ContactContent() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="bg-[#0D1F5C] text-white py-20">
+      <section className="bg-[#0D1F5C] text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
-            {fr ? "📬 Nous contacter" : "📬 Get in Touch"}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <ScrollFadeUp>
+                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
+                  {fr ? "📬 Nous contacter" : "📬 Get in Touch"}
+                </div>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                  {fr ? "Nous sommes là pour vous aider" : "We're Here to Help"}
+                </h1>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.2}>
+                <p className="text-lg text-blue-200 leading-relaxed max-w-xl">
+                  {fr
+                    ? "Contactez-nous pour toute question concernant l'expédition, les tarifs ou les services en gros. Notre équipe répond rapidement."
+                    : "Reach out with any questions about shipping, pricing, or wholesale services. Our team responds quickly."}
+                </p>
+              </ScrollFadeUp>
+            </div>
+            <ScrollFadeUp delay={0.3}>
+              <ScrollFadeImg src="/illustrations/contact_service_rep_illustration.png" alt="ShipDirect Customer Support Representative" priority />
+            </ScrollFadeUp>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 max-w-2xl">
-            {fr ? "Nous sommes là pour vous aider" : "We're Here to Help"}
-          </h1>
-          <p className="text-lg text-blue-200 max-w-xl">
-            {fr
-              ? "Contactez-nous pour toute question concernant l'expédition, les tarifs ou les services en gros. Notre équipe répond rapidement."
-              : "Reach out with any questions about shipping, pricing, or wholesale services. Our team responds quickly."}
-          </p>
         </div>
       </section>
 
@@ -38,7 +54,7 @@ export default function ContactContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 items-start">
             {/* Left: contact info card */}
-            <div className="lg:col-span-2 lg:sticky lg:top-24">
+            <ScrollFadeUp className="lg:col-span-2 lg:sticky lg:top-24">
               <div className="bg-[#0D1F5C] text-white rounded-2xl p-8">
                 <h2 className="text-xl font-extrabold mb-6">
                   {fr ? "Informations de contact" : "Contact Information"}
@@ -97,10 +113,10 @@ export default function ContactContent() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollFadeUp>
 
             {/* Right: contact form */}
-            <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+            <ScrollFadeUp delay={0.2} className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-xl font-extrabold text-[#0D1F5C] mb-2">
                 {fr ? "Envoyez-nous un message" : "Send Us a Message"}
               </h2>
@@ -108,7 +124,7 @@ export default function ContactContent() {
                 {fr ? "Nous vous répondrons dans un délai d'un jour ouvrable." : "We'll get back to you within one business day."}
               </p>
               <QuoteForm />
-            </div>
+            </ScrollFadeUp>
           </div>
         </div>
       </section>

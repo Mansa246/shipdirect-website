@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
+import { motion } from "framer-motion";
 
 export default function WholesaleContent() {
   const { lang } = useLanguage();
@@ -111,46 +114,64 @@ export default function WholesaleContent() {
       {/* ── HERO ── */}
       <section className="bg-[#0D1F5C] text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#C4882A]/20 text-[#C4882A] rounded-full px-4 py-1.5 text-sm font-bold mb-6 uppercase tracking-wide">
-                {fr ? "🏭 Gros et exportation B2B" : "🏭 Wholesale & B2B Export"}
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-                {fr ? "Votre partenaire canadien d'approvisionnement et d'exportation pour le Sénégal" : "Your Canadian Supply & Export Partner for Senegal"}
-              </h1>
-              <p className="text-lg text-blue-200 leading-relaxed mb-8">
-                {fr
-                  ? "ShipDirect source des produits agricoles canadiens de qualité supérieure et coordonne l'exportation complète vers les ports sénégalais — offrant à votre entreprise une chaîne d'approvisionnement fiable et rationalisée depuis l'Amérique du Nord. Vous vous concentrez sur la distribution. Nous gérons tout en amont."
-                  : "ShipDirect sources premium Canadian agricultural products and coordinates full export to Senegalese ports — giving your business a reliable, streamlined supply chain from North America. You focus on distribution. We handle everything upstream."}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#C4882A] text-white font-bold rounded-xl hover:bg-[#a87022] transition-colors">
-                  {fr ? "Renseignez-vous sur le gros →" : "Inquire About Wholesale →"}
-                </Link>
-                <a href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
-                  {fr ? "Appeler le 613-700-2747" : "Call 613-700-2747"}
-                </a>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {heroStats.map((item, i) => (
-                <div key={i} className="bg-white/10 rounded-2xl px-5 py-4 border border-white/20 flex items-start gap-4">
-                  <span className="text-2xl shrink-0">{item.icon}</span>
-                  <div>
-                    <div className="font-semibold text-white text-sm mb-0.5">{item.title}</div>
-                    <div className="text-xs text-blue-200">{item.desc}</div>
-                  </div>
+              <ScrollFadeUp>
+                <div className="inline-flex items-center gap-2 bg-[#C4882A]/20 text-[#C4882A] rounded-full px-4 py-1.5 text-sm font-bold mb-6 uppercase tracking-wide">
+                  {fr ? "🏭 Gros et exportation B2B" : "🏭 Wholesale & B2B Export"}
                 </div>
-              ))}
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                  {fr ? "Votre partenaire canadien d'approvisionnement et d'exportation pour le Sénégal" : "Your Canadian Supply & Export Partner for Senegal"}
+                </h1>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.2}>
+                <p className="text-lg text-blue-200 leading-relaxed mb-8">
+                  {fr
+                    ? "ShipDirect source des produits agricoles canadiens de qualité supérieure et coordonne l'exportation complète vers les ports sénégalais — offrant à votre entreprise une chaîne d'approvisionnement fiable et rationalisée depuis l'Amérique du Nord. Vous vous concentrez sur la distribution. Nous gérons tout en amont."
+                    : "ShipDirect sources premium Canadian agricultural products and coordinates full export to Senegalese ports — giving your business a reliable, streamlined supply chain from North America. You focus on distribution. We handle everything upstream."}
+                </p>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.3} className="flex flex-wrap gap-4">
+                <Link href="/quote" passHref legacyBehavior>
+                  <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#C4882A] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#a87022] transition-colors">
+                    {fr ? "Renseignez-vous sur le gros →" : "Inquire About Wholesale →"}
+                  </motion.a>
+                </Link>
+                <motion.a whileHover={{ scale: 1.03 }} href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
+                  {fr ? "Appeler le 613-700-2747" : "Call 613-700-2747"}
+                </motion.a>
+              </ScrollFadeUp>
             </div>
+            
+            <ScrollFadeUp delay={0.3}>
+              <ScrollFadeImg src="/illustrations/wholesale_b2b_illustration.png" alt="Bustling Canadian Port Wholesale Export Facility" priority />
+            </ScrollFadeUp>
           </div>
+        </div>
+      </section>
+
+      {/* ── STATS BAR ── */}
+      <section className="bg-[#08133b] py-8 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollFadeUp className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {heroStats.map((item, i) => (
+              <div key={i} className="flex flex-col gap-1 items-start text-left">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{item.icon}</span>
+                  <div className="font-semibold text-white text-sm">{item.title}</div>
+                </div>
+                <div className="text-xs text-blue-200 mt-1 pl-9">{item.desc}</div>
+              </div>
+            ))}
+          </ScrollFadeUp>
         </div>
       </section>
 
       {/* ── B2B MODEL EXPLAINER ── */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollFadeUp className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-5">
               <h2 className="text-3xl font-extrabold text-[#0D1F5C]">
@@ -189,7 +210,7 @@ export default function WholesaleContent() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
 
       {/* ── WHO IT'S FOR ── */}
@@ -214,7 +235,7 @@ export default function WholesaleContent() {
 
       {/* ── PRODUCT CATEGORIES ── */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollFadeUp className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-[#0D1F5C] mb-3">
               {fr ? "Produits canadiens que nous exportons" : "Canadian Products We Export"}
@@ -225,7 +246,7 @@ export default function WholesaleContent() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {productCategories.map((cat, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border border-gray-200">
+              <div key={i} className="rounded-2xl overflow-hidden border border-gray-200 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="bg-[#0D1F5C] px-5 py-3 flex items-center gap-3">
                   <span className="text-xl">{cat.icon}</span>
                   <h3 className="font-bold text-white text-sm">{cat.name}</h3>
@@ -244,11 +265,11 @@ export default function WholesaleContent() {
             <p className="text-sm text-[#1A1410] mb-4">
               {fr ? "Vous ne trouvez pas un produit spécifique ? Contactez-nous — nous travaillons avec un large réseau de fournisseurs canadiens." : "Don't see a specific product or grade? Contact us — we work with a wide network of Canadian suppliers and can often source specialty products on request."}
             </p>
-            <a href="mailto:info@shipdirect.ca" className="inline-flex items-center px-5 py-2.5 bg-[#C4882A] text-white font-semibold text-sm rounded-xl hover:bg-[#a87022] transition-colors">
+            <motion.a whileHover={{ scale: 1.03 }} href="mailto:info@shipdirect.ca" className="inline-flex items-center px-5 py-2.5 bg-[#C4882A] text-white font-semibold text-sm rounded-xl hover:bg-[#a87022] transition-colors">
               {fr ? "✉️ Contacter pour une demande de produit" : "✉️ Contact for Product Inquiry"}
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
 
       {/* ── B2B EXPORT PROCESS ── */}
@@ -300,7 +321,7 @@ export default function WholesaleContent() {
       {/* ── WHOLESALE CTA ── */}
       <section className="bg-[#0D1F5C] py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none gold-glow" />
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollFadeUp className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-[#C4882A]/20 text-[#C4882A] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide mb-5">
             {fr ? "Prêt à s'approvisionner ?" : "Ready to Source?"}
           </div>
@@ -311,14 +332,14 @@ export default function WholesaleContent() {
             {fr ? "Contactez ShipDirect aujourd'hui pour discuter de vos besoins en gros. Nous vous fournirons un devis détaillé et personnalisé." : "Contact ShipDirect today to discuss your wholesale requirements. We'll provide a detailed, customized quote for your products and volumes."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:info@shipdirect.ca" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#C4882A] text-white font-bold rounded-xl hover:bg-[#a87022] transition-colors">
+            <motion.a whileHover={{ scale: 1.03 }} href="mailto:info@shipdirect.ca" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#C4882A] text-white font-bold rounded-xl shadow-lg hover:bg-[#a87022] transition-colors">
               {fr ? "✉️ Email pour demande B2B" : "✉️ Email for B2B Inquiry"}
-            </a>
-            <a href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.03 }} href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
               {fr ? "📞 Appeler le 613-700-2747" : "📞 Call 613-700-2747"}
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
     </main>
   );

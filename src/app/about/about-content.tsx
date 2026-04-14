@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
+import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
+import { motion } from "framer-motion";
 
 export default function AboutContent() {
   const { lang } = useLanguage();
@@ -41,32 +44,42 @@ export default function AboutContent() {
       {/* ── HERO ── */}
       <section className="bg-[#0D1F5C] text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-6">
-                {fr ? "🚢 Notre histoire" : "🚢 Our Story"}
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-                {fr ? (
-                  <>Connecter le Canada au Sénégal.{" "}<span className="text-[#D42B2B]">Un envoi à la fois.</span></>
-                ) : (
-                  <>Connecting Canada to Senegal.{" "}<span className="text-[#D42B2B]">One Shipment at a Time.</span></>
-                )}
-              </h1>
-              <p className="text-lg text-blue-200 leading-relaxed">
-                {fr
-                  ? "ShipDirect a été construit avec un seul objectif : rendre l'expédition internationale entre le Canada et le Sénégal simple, fiable et accessible — pour les familles, les communautés et les entreprises."
-                  : "ShipDirect was built with one purpose: to make international shipping between Canada and Senegal simple, reliable, and accessible — for families, communities, and businesses alike."}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="bg-white/10 rounded-2xl px-6 py-5 border border-white/20">
-                  <div className="text-2xl font-extrabold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-blue-200">{stat.label}</div>
+              <ScrollFadeUp>
+                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-6">
+                  {fr ? "🚢 Notre histoire" : "🚢 Our Story"}
                 </div>
-              ))}
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.1}>
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                  {fr ? (
+                    <>Connecter le Canada au Sénégal.{" "}<span className="text-[#D42B2B]">Un envoi à la fois.</span></>
+                  ) : (
+                    <>Connecting Canada to Senegal.{" "}<span className="text-[#D42B2B]">One Shipment at a Time.</span></>
+                  )}
+                </h1>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.2}>
+                <p className="text-lg text-blue-200 leading-relaxed mb-8">
+                  {fr
+                    ? "ShipDirect a été construit avec un seul objectif : rendre l'expédition internationale entre le Canada et le Sénégal simple, fiable et accessible — pour les familles, les communautés et les entreprises."
+                    : "ShipDirect was built with one purpose: to make international shipping between Canada and Senegal simple, reliable, and accessible — for families, communities, and businesses alike."}
+                </p>
+              </ScrollFadeUp>
+              <ScrollFadeUp delay={0.3} className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {stats.map((stat, i) => (
+                  <div key={i} className="bg-white/10 rounded-2xl px-4 py-4 border border-white/20 text-center">
+                    <div className="text-xl font-extrabold text-white mb-1">{stat.value}</div>
+                    <div className="text-xs text-blue-200 leading-tight">{stat.label}</div>
+                  </div>
+                ))}
+              </ScrollFadeUp>
             </div>
+            
+            <ScrollFadeUp delay={0.3}>
+              <ScrollFadeImg src="/illustrations/about_us_team_illustration.png" alt="Diverse ShipDirect Team" priority />
+            </ScrollFadeUp>
           </div>
         </div>
       </section>
@@ -125,7 +138,7 @@ export default function AboutContent() {
 
       {/* ── CTA BAND ── */}
       <section className="bg-[#0D1F5C] py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollFadeUp className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
             {fr ? "Prêt à expédier avec nous ?" : "Ready to Ship With Us?"}
           </h2>
@@ -133,14 +146,18 @@ export default function AboutContent() {
             {fr ? "Obtenez un devis en quelques minutes. Notre équipe gère les envois personnels et commerciaux." : "Get a quote in minutes. Our team handles personal and commercial shipments."}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/quote" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl hover:bg-[#b82424] transition-colors">
-              {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
+            <Link href="/quote" passHref legacyBehavior>
+              <motion.a whileHover={{ scale: 1.03 }} className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
+                {fr ? "Obtenir un devis gratuit →" : "Get a Free Quote →"}
+              </motion.a>
             </Link>
-            <Link href="/contact" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
-              {fr ? "Nous contacter" : "Contact Us"}
+            <Link href="/contact" passHref legacyBehavior>
+              <motion.a whileHover={{ scale: 1.03 }} className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
+                {fr ? "Nous contacter" : "Contact Us"}
+              </motion.a>
             </Link>
           </div>
-        </div>
+        </ScrollFadeUp>
       </section>
     </main>
   );
