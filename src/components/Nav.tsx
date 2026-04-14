@@ -41,15 +41,15 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 bg-white p-1 rounded-md">
+          <Link href="/" className="flex-shrink-0 bg-white px-2 py-1.5 rounded-lg shadow-sm border border-gray-100">
             <Image
               src="/logo.png"
               alt="ShipDirect"
-              width={150}
-              height={50}
-              className="h-10 w-auto object-contain"
+              width={200}
+              height={80}
+              className="h-12 lg:h-16 w-auto object-contain scale-110"
               priority
             />
           </Link>
