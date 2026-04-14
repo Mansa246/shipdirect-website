@@ -59,7 +59,7 @@ export default function Footer() {
                 alt="ShipDirect"
                 width={772}
                 height={511}
-                className="h-[80px] w-auto object-contain mix-blend-multiply"
+                className="h-[64px] w-auto object-contain mix-blend-multiply"
               />
             </div>
             <p className="text-sm text-blue-200 leading-relaxed mb-5">
