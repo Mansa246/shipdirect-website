@@ -6,6 +6,8 @@ interface PricingCardProps {
   bullets: string[];
   popular?: boolean;
   vehicle?: boolean;
+  popularLabel?: string;
+  oneWayLabel?: string;
 }
 
 export default function PricingCard({
@@ -16,6 +18,8 @@ export default function PricingCard({
   bullets,
   popular,
   vehicle,
+  popularLabel = "Most Popular",
+  oneWayLabel = "One Way",
 }: PricingCardProps) {
   return (
     <div
@@ -29,7 +33,7 @@ export default function PricingCard({
     >
       {popular && (
         <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#D42B2B] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap">
-          Most Popular
+          {popularLabel}
         </span>
       )}
 
@@ -46,7 +50,7 @@ export default function PricingCard({
         </div>
         <div className="text-right">
           <div className="text-2xl font-extrabold text-[#0D1F5C]">{price}</div>
-          <div className="text-xs text-[#6B7280] mt-0.5">One Way</div>
+          <div className="text-xs text-[#6B7280] mt-0.5">{oneWayLabel}</div>
         </div>
       </div>
 

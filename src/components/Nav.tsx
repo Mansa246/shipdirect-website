@@ -4,21 +4,23 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useLanguage, type Lang } from "@/lib/i18n/LanguageContext";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Wholesale", href: "/wholesale" },
-  { label: "FAQs", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { key: "home", labelEn: "Home", labelFr: "Accueil", href: "/" },
+  { key: "about", labelEn: "About", labelFr: "À propos", href: "/about" },
+  { key: "pricing", labelEn: "Pricing", labelFr: "Tarifs", href: "/pricing" },
+  { key: "how", labelEn: "How It Works", labelFr: "Comment ça marche", href: "/how-it-works" },
+  { key: "wholesale", labelEn: "Wholesale", labelFr: "Grossiste", href: "/wholesale" },
+  { key: "faq", labelEn: "FAQs", labelFr: "FAQ", href: "/faq" },
+  { key: "contact", labelEn: "Contact", labelFr: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { lang, setLang } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -29,6 +31,8 @@ export default function Nav() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  const quoteLabel = lang === "fr" ? "Obtenir un devis" : "Get a Quote";
 
   return (
     <nav
@@ -64,29 +68,64 @@ export default function Nav() {
                       : "text-[#0D1F5C] hover:text-[#D42B2B]"
                   }`}
                 >
-                  {link.label}
+                  {lang === "fr" ? link.labelFr : link.labelEn}
                 </Link>
               );
             })}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          {/* Desktop: Language Toggle + CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Language Toggle */}
+            <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+              {(["en", "fr"] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
+                    lang === l
+                      ? "bg-[#D42B2B] text-white"
+                      : "text-[#0D1F5C] hover:bg-gray-100"
+                  }`}
+                  aria-label={l === "en" ? "Switch to English" : "Passer en français"}
+                >
+                  {l === "en" ? "🇨🇦 EN" : "🇫🇷 FR"}
+                </button>
+              ))}
+            </div>
+
             <Link
               href="/quote"
               className="shimmer-btn inline-flex items-center px-5 py-2.5 bg-[#D42B2B] text-white text-sm font-semibold rounded-lg hover:bg-[#b82424] transition-colors"
             >
-              Get a Quote
+              {quoteLabel}
             </Link>
           </div>
 
           {/* Mobile: CTA + Hamburger */}
-          <div className="flex lg:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center gap-2">
+            {/* Mobile language toggle */}
+            <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+              {(["en", "fr"] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-2 py-1 text-xs font-semibold transition-colors ${
+                    lang === l
+                      ? "bg-[#D42B2B] text-white"
+                      : "text-[#0D1F5C] hover:bg-gray-100"
+                  }`}
+                >
+                  {l === "en" ? "EN" : "FR"}
+                </button>
+              ))}
+            </div>
+
             <Link
               href="/quote"
               className="inline-flex items-center px-4 py-2 bg-[#D42B2B] text-white text-sm font-semibold rounded-lg hover:bg-[#b82424] transition-colors"
             >
-              Get a Quote
+              {quoteLabel}
             </Link>
             <button
               onClick={() => setOpen(!open)}
@@ -123,7 +162,7 @@ export default function Nav() {
                       : "text-[#0D1F5C] hover:bg-gray-50"
                   }`}
                 >
-                  {link.label}
+                  {lang === "fr" ? link.labelFr : link.labelEn}
                 </Link>
               );
             })}

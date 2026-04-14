@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ClientWrapper from "@/components/ClientWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,9 +31,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans`}>
-        <Nav />
-        <div className="pt-16">{children}</div>
-        <Footer />
+        <ClientWrapper>
+          <Nav />
+          <div className="pt-16">{children}</div>
+          <Footer />
+        </ClientWrapper>
       </body>
     </html>
   );
