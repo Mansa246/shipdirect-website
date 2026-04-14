@@ -23,7 +23,7 @@ export default function HeroIllustration() {
         className="w-full h-full relative"
       >
         <Image
-          src="/illustrations/hero_landing.png"
+          src="/illustrations/hero-illustration.png"
           alt="ShipDirect Box dropping to Senegal map"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
