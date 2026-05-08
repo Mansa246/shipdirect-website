@@ -6,13 +6,13 @@ import { staggerContainer, scaleUp } from "@/config/animations";
 
 export default function WhatWeShip() {
     const standardCards = [
-        { icon: Package, name: "Small Boxes", price: "$100", detail: "23kg max weight" },
-        { icon: PackageOpen, name: "Big Boxes", price: "$150", detail: "32kg max weight" },
-        { icon: Archive, name: "Baril", price: "$250", detail: "50–60kg" },
-        { icon: Armchair, name: "Sofa", price: "$500", detail: "3-seat sofa" },
-        { icon: ShoppingBag, name: "Large Bag (Costco Bag)", price: "$75", detail: "Standard size" },
-        { icon: Car, name: "Sedan", price: "$1,600", detail: "Full vehicle shipping" },
-        { icon: Truck, name: "SUV", price: "$1,700", detail: "Full vehicle shipping" },
+        { icon: Package, name: "Small Boxes", price: "$100 + Tax", detail: "23kg max weight" },
+        { icon: PackageOpen, name: "Big Boxes", price: "$150 + Tax", detail: "32kg max weight" },
+        { icon: Archive, name: "Baril", price: "$250 + Tax", detail: "50–60kg" },
+        { icon: Armchair, name: "Sofa", price: "$500 + Tax", detail: "3-seat sofa" },
+        { icon: ShoppingBag, name: "Large Bag (Costco Bag)", price: "$75 + Tax", detail: "Standard size" },
+        { icon: Car, name: "Sedan", price: "$1,600 + Tax", detail: "Port fees + customs extra" },
+        { icon: Truck, name: "SUV", price: "$1,700 + Tax", detail: "Port fees + customs extra" },
     ];
 
     return (

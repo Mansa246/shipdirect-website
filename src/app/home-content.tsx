@@ -53,16 +53,16 @@ export default function HomeContent() {
 
   const pricingPreview = fr
     ? [
-        { icon: "🛍️", name: "Grand Sac (Sac Costco)", price: "$75 CAD" },
-        { icon: "📦", name: "Petite Boîte (23kg)", price: "$100 CAD" },
-        { icon: "📫", name: "Grande Boîte (32kg)", price: "$150 CAD", popular: true },
-        { icon: "🛢️", name: "Baril / Fût (50–60kg)", price: "$250 CAD" },
+        { icon: "🛍️", name: "Grand Sac (Sac Costco)", price: "$75 CAD + Taxes" },
+        { icon: "📦", name: "Petite Boîte (23kg)", price: "$100 CAD + Taxes" },
+        { icon: "📫", name: "Grande Boîte (32kg)", price: "$150 CAD + Taxes", popular: true },
+        { icon: "🛢️", name: "Baril / Fût (50–60kg)", price: "$250 CAD + Taxes" },
       ]
     : [
-        { icon: "🛍️", name: "Large Bag (Costco Bag)", price: "$75 CAD" },
-        { icon: "📦", name: "Small Box (23kg)", price: "$100 CAD" },
-        { icon: "📫", name: "Big Box (32kg)", price: "$150 CAD", popular: true },
-        { icon: "🛢️", name: "Baril / Drum (50–60kg)", price: "$250 CAD" },
+        { icon: "🛍️", name: "Large Bag (Costco Bag)", price: "$75 CAD + Tax" },
+        { icon: "📦", name: "Small Box (23kg)", price: "$100 CAD + Tax" },
+        { icon: "📫", name: "Big Box (32kg)", price: "$150 CAD + Tax", popular: true },
+        { icon: "🛢️", name: "Baril / Drum (50–60kg)", price: "$250 CAD + Tax" },
       ];
 
   const whyCards = fr
@@ -86,14 +86,14 @@ export default function HomeContent() {
   const faqPreview = fr
     ? [
         { q: "Que puis-je expédier du Canada au Sénégal ?", a: "Vous pouvez expédier une large gamme de biens personnels incluant vêtements, articles ménagers, nourriture, électronique, meubles (sofas, tables) et véhicules (berlines, VUS, camions). Nous expédions via des grands sacs (Sac Costco), petites boîtes, grandes boîtes, barils/fûts et exportation complète de véhicules. Contactez-nous si vous n'êtes pas sûr d'un article spécifique." },
-        { q: "Les prix incluent-ils la douane ou les frais portuaires ?", a: "Oui, pour les envois B2C (personnels). Nos tarifs incluent les droits de douane, les frais de manutention portuaire et tous les frais liés à l'importation au Sénégal. Aucuns frais cachés — le prix affiché est le prix total." },
+        { q: "Les prix incluent-ils la douane ou les frais portuaires ?", a: "Pour les colis et meubles B2C, oui — droits de douane et frais d'importation inclus. Pour les véhicules, les frais portuaires sont à régler avec nos frais et les droits de douane sont à la charge du client. Aucuns frais cachés sur les colis." },
         { q: "Offrez-vous le ramassage au Canada ?", a: "Oui, nous pouvons organiser le ramassage au Canada pour un supplément. Les frais dépendent de votre emplacement et de la distance de notre établissement d'Ottawa. Contactez-nous au 613-700-2747 ou info@shipdirect.ca pour demander un devis de ramassage." },
         { q: "Où puis-je collecter mon envoi au Sénégal ?", a: "Tous les envois B2C arrivent à notre établissement de Keur Massar au Sénégal. Les destinataires collectent leurs marchandises là-bas sans frais supplémentaires. Nous vous notifierons lorsque votre envoi sera prêt." },
         { q: "Puis-je expédier une voiture ou un véhicule ?", a: "Oui. Nous expédions les berlines pour 1 600 $ CAD et les VUS ou camions pour 1 700 $ CAD, aller simple. Contactez-nous pour discuter des exigences de préparation du véhicule et de la documentation nécessaire." },
       ]
     : [
         { q: "What can I ship from Canada to Senegal?", a: "You can ship a wide range of personal goods including clothing, household items, food, electronics, furniture (sofas, tables), and vehicles (sedans, SUVs, trucks). We ship via large bags (Costco bags), small boxes, large boxes, barrels/drums, and full vehicle export. Contact us if you're unsure about a specific item." },
-        { q: "Do prices include customs or port fees?", a: "Yes, for B2C (personal) shipments. Our rates include customs duties, port handling fees, and all import-related charges in Senegal. No hidden fees — the price you see is the total price." },
+        { q: "Do prices include customs or port fees?", a: "For B2C parcels and furniture, yes — customs duties and import charges are included. For vehicles, port fees are due with our shipping fee and customs duties are the client's responsibility. No hidden fees on parcels." },
         { q: "Do you offer pickup in Canada?", a: "Yes, we can arrange pickup in Canada for an additional charge. The fee depends on your location and distance from our Ottawa facility. Contact us at 613-700-2747 or info@shipdirect.ca to request a pickup quote." },
         { q: "Where do I collect my shipment in Senegal?", a: "All B2C shipments arrive at our Keur Massar facility in Senegal. Recipients collect their goods there at no additional charge. We'll notify you when your shipment is ready." },
         { q: "Can I ship a car or vehicle?", a: "Yes. We ship sedans for $1,600 CAD and SUVs or trucks for $1,700 CAD, one-way. Contact us to discuss vehicle preparation requirements and documentation needed." },

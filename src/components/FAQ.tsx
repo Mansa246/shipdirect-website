@@ -11,7 +11,7 @@ export default function FAQ() {
     const faqs = [
         { q: "How long does shipping to Senegal take?", a: "Transit times vary depending on the service selected. Contact us for current estimated timelines." },
         { q: "What items can I ship?", a: "We ship boxes, barrels, furniture, household goods, and vehicles. Contact us if you're unsure about a specific item." },
-        { q: "Do you ship vehicles?", a: "Yes. We ship Sedans ($1,600) and SUVs ($1,700). Contact us to arrange vehicle shipping." },
+        { q: "Do you ship vehicles?", a: "Yes. We ship Sedans ($1,600 + tax) and SUVs ($1,700 + tax). Port fees are due with our shipping fee. Customs duties are the client's responsibility. Contact us to arrange vehicle shipping." },
         { q: "Are there weight limits?", a: "Yes. Small boxes up to 23kg, big boxes up to 32kg, barils up to 60kg. Contact us for oversized items." },
         { q: "How do I get a quote?", a: "Fill out our quote form, call us at (613) 700-2747, or email info@shipdirect.ca." },
         { q: "Are your prices fixed?", a: "Our listed prices are our standard rates. Custom quotes are available for special items." },
