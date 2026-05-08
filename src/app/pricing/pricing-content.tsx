@@ -25,8 +25,8 @@ export default function PricingContent() {
         { icon: "📫", name: "Grande Boîte", descriptor: "Jusqu'à 32 kg", price: "$150 CAD + Taxes", popular: true, bullets: ["Jusqu'à 32 kg par boîte", "L'option la plus populaire pour les familles", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "🛢️", name: "Baril / Fût", descriptor: "50–60 kg", price: "$250 CAD + Taxes", bullets: ["Fût/baril standard de 50–60 kg", "Idéal pour les marchandises en vrac", "Dépôt à l'établissement d'Ottawa"] },
         { icon: "🛋️", name: "Sofa / Meuble", descriptor: "Pièce standard", price: "$500 CAD + Taxes", bullets: ["Pièce de mobilier standard unique", "Doit être correctement emballé/enveloppé", "Contactez-nous pour les articles surdimensionnés"] },
-        { icon: "🚗", name: "Berline", descriptor: "Voiture standard", price: "$1 600 CAD + Taxes", vehicle: true, bullets: ["Véhicule berline standard", "Frais portuaires à régler avec nos frais d'expédition", "Droits de douane à la charge du client"] },
-        { icon: "🚙", name: "VUS / Camion", descriptor: "Grand véhicule", price: "$1 700 CAD + Taxes", vehicle: true, bullets: ["VUS, camion ou fourgonnette", "Frais portuaires à régler avec nos frais d'expédition", "Droits de douane à la charge du client"] },
+        { icon: "🚗", name: "Berline", descriptor: "Voiture standard", price: "$1 600 CAD + Taxes", vehicle: true, bullets: ["Véhicule berline standard", "Frais portuaires à régler avec nos frais d'expédition", "Droits de douane : payez directement ou via ShipDirect"] },
+        { icon: "🚙", name: "VUS / Camion", descriptor: "Grand véhicule", price: "$1 700 CAD + Taxes", vehicle: true, bullets: ["VUS, camion ou fourgonnette", "Frais portuaires à régler avec nos frais d'expédition", "Droits de douane : payez directement ou via ShipDirect"] },
       ]
     : [
         { icon: "🛍️", name: "Large Bag (Costco Bag)", descriptor: "Standard size", price: "$75 CAD + Tax", bullets: ["Standard large (Costco-sized) bag", "Ideal for clothing, household goods", "Drop-off at Ottawa facility"] },
@@ -34,8 +34,8 @@ export default function PricingContent() {
         { icon: "📫", name: "Big Box", descriptor: "Up to 32kg", price: "$150 CAD + Tax", popular: true, bullets: ["Up to 32kg per box", "Most popular option for families", "Drop-off at Ottawa facility"] },
         { icon: "🛢️", name: "Baril / Drum", descriptor: "50–60kg", price: "$250 CAD + Tax", bullets: ["Standard 50–60kg drum/barrel", "Ideal for bulk goods", "Drop-off at Ottawa facility"] },
         { icon: "🛋️", name: "Sofa / Furniture", descriptor: "Standard piece", price: "$500 CAD + Tax", bullets: ["Standard single furniture piece", "Must be properly packed/wrapped", "Contact us for oversized items"] },
-        { icon: "🚗", name: "Sedan", descriptor: "Standard car", price: "$1,600 CAD + Tax", vehicle: true, bullets: ["Standard sedan vehicle", "Port fees due together with shipping fee", "Customs duties are client's responsibility"] },
-        { icon: "🚙", name: "SUV / Truck", descriptor: "Large vehicle", price: "$1,700 CAD + Tax", vehicle: true, bullets: ["SUV, truck, or van", "Port fees due together with shipping fee", "Customs duties are client's responsibility"] },
+        { icon: "🚗", name: "Sedan", descriptor: "Standard car", price: "$1,600 CAD + Tax", vehicle: true, bullets: ["Standard sedan vehicle", "Port fees due together with shipping fee", "Customs duties: pay directly or remit to ShipDirect and we pay on your behalf"] },
+        { icon: "🚙", name: "SUV / Truck", descriptor: "Large vehicle", price: "$1,700 CAD + Tax", vehicle: true, bullets: ["SUV, truck, or van", "Port fees due together with shipping fee", "Customs duties: pay directly or remit to ShipDirect and we pay on your behalf"] },
       ];
 
   const canadaNotes = fr
@@ -43,8 +43,8 @@ export default function PricingContent() {
     : ["Standard: Drop-off at our Ottawa location (address provided upon confirmation)", "Pickup available in Canada for an additional charge (varies by distance)", "Contact us to get a pickup quote before shipping"];
 
   const senegalNotes = fr
-    ? ["Tous les envois arrivent à Keur Massar, Sénégal", "Collecte gratuite à l'établissement de Keur Massar pour les destinataires", "Livraison locale au Sénégal disponible pour un supplément", "Colis/meubles B2C : droits de douane et frais d'importation inclus", "Véhicules : frais portuaires à régler avec nos frais ; droits de douane à la charge du client"]
-    : ["All shipments arrive at Keur Massar, Senegal", "Free pickup at Keur Massar facility for recipients", "Local delivery within Senegal available for an additional charge", "B2C parcels/furniture: customs duties and import charges included", "Vehicles: port fees due with shipping fee; customs duties are client's responsibility"];
+    ? ["Tous les envois arrivent à Keur Massar, Sénégal", "Collecte gratuite à l'établissement de Keur Massar pour les destinataires", "Livraison locale au Sénégal disponible pour un supplément", "Colis/meubles B2C : droits de douane et frais d'importation inclus", "Véhicules : frais portuaires inclus avec nos frais ; droits de douane payables directement ou via ShipDirect"]
+    : ["All shipments arrive at Keur Massar, Senegal", "Free pickup at Keur Massar facility for recipients", "Local delivery within Senegal available for an additional charge", "B2C parcels/furniture: customs duties and import charges included", "Vehicles: port fees due with shipping fee; customs duties payable directly or via ShipDirect on your behalf"];
 
   return (
     <main>
@@ -65,7 +65,7 @@ export default function PricingContent() {
               </ScrollFadeUp>
               <ScrollFadeUp delay={0.2}>
                 <p className="text-lg text-blue-200 mb-8">
-                  {fr ? "Tous les prix sont pour l'expédition aller simple du Canada vers le Sénégal, en dollars canadiens, plus taxes. Pour les colis et meubles B2C, les droits de douane et frais d'importation sont inclus. Pour les véhicules, les frais portuaires sont dus avec nos frais et les droits de douane sont à la charge du client." : "All prices are one-way shipping from Canada to Senegal, in Canadian dollars, plus tax. For B2C parcels and furniture, customs duties and import charges are included. For vehicles, port fees are due with our fee and customs duties are the client's responsibility."}
+                  {fr ? "Tous les prix sont pour l'expédition aller simple du Canada vers le Sénégal, en dollars canadiens, plus taxes. Pour les colis et meubles B2C, droits de douane et frais d'importation inclus. Pour les véhicules, les frais portuaires sont dus avec nos frais ; les droits de douane peuvent être payés directement par le client ou via ShipDirect en son nom." : "All prices are one-way shipping from Canada to Senegal, in Canadian dollars, plus tax. For B2C parcels and furniture, customs duties and import charges are included. For vehicles, port fees are due with our fee; customs duties can be paid directly by the client or remitted to ShipDirect and we pay on their behalf."}
                 </p>
               </ScrollFadeUp>
               <ScrollFadeUp delay={0.3}>
@@ -112,9 +112,9 @@ export default function PricingContent() {
           <ScrollFadeUp delay={0.2}>
             <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-5 text-sm text-[#6B7280] text-center">
               {fr ? (
-                <>Tous les prix sont aller simple du Canada au Sénégal, en CAD, plus taxes.{" "}<strong className="text-[#1A1410]">Colis &amp; meubles B2C : droits de douane et frais d&apos;importation inclus. Véhicules : frais portuaires à régler avec nos frais ; droits de douane à la charge du client.</strong>{" "}Les prix sont susceptibles de changer. Contactez-nous pour confirmer les tarifs actuels avant de réserver.</>
+                <>Tous les prix sont aller simple du Canada au Sénégal, en CAD, plus taxes.{" "}<strong className="text-[#1A1410]">Colis &amp; meubles B2C : droits de douane et frais d&apos;importation inclus. Véhicules : frais portuaires à régler avec nos frais ; droits de douane payables directement ou via ShipDirect en votre nom.</strong>{" "}Les prix sont susceptibles de changer. Contactez-nous pour confirmer les tarifs actuels avant de réserver.</>
               ) : (
-                <>All prices are one-way from Canada to Senegal, in CAD, plus tax.{" "}<strong className="text-[#1A1410]">B2C parcels &amp; furniture: customs duties and import charges included. Vehicles: port fees due with our fee; customs duties are the client&apos;s responsibility.</strong>{" "}Prices subject to change. Contact us to confirm current rates before booking.</>
+                <>All prices are one-way from Canada to Senegal, in CAD, plus tax.{" "}<strong className="text-[#1A1410]">B2C parcels &amp; furniture: customs duties and import charges included. Vehicles: port fees due with our fee; customs duties payable directly by client or remitted to ShipDirect — we pay on your behalf.</strong>{" "}Prices subject to change. Contact us to confirm current rates before booking.</>
               )}
             </div>
           </ScrollFadeUp>
