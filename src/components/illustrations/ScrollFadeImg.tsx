@@ -14,7 +14,7 @@ export default function ScrollFadeImg({ src, alt, priority = false }: ScrollFade
 
   if (prefersReducedMotion) {
     return (
-      <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-black/20 ring-1 ring-white/10">
         <Image src={src} alt={alt} fill className="object-cover" priority={priority} sizes="(max-width: 768px) 100vw, 50vw" />
       </div>
     );
@@ -26,7 +26,7 @@ export default function ScrollFadeImg({ src, alt, priority = false }: ScrollFade
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group"
+      className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-black/20 ring-1 ring-white/10 group"
     >
       <Image 
         src={src} 

@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { Factory, LifeBuoy, Mail, Package, Phone } from "lucide-react";
 import FaqAccordion from "@/components/FaqAccordion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
-import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
-import { motion } from "framer-motion";
+import PageHero from "@/components/site/PageHero";
+import CtaBand from "@/components/site/CtaBand";
+import { IconTile } from "@/components/site/blocks";
+import { Button } from "@/components/ui/button";
 
 export default function FaqContent() {
   const { lang } = useLanguage();
@@ -65,51 +68,31 @@ export default function FaqContent() {
 
   return (
     <main>
-      {/* ── HERO ── */}
-      <section className="bg-[#0D1F5C] text-white py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <ScrollFadeUp>
-                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
-                  {fr ? "❓ Centre d'aide" : "❓ Help Centre"}
-                </div>
-              </ScrollFadeUp>
-              <ScrollFadeUp delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-                  {fr ? "Questions fréquemment posées" : "Frequently Asked Questions"}
-                </h1>
-              </ScrollFadeUp>
-              <ScrollFadeUp delay={0.2}>
-                <p className="text-lg text-blue-200 leading-relaxed max-w-xl">
-                  {fr ? "Tout ce que vous devez savoir sur l'expédition et l'exportation en gros avec ShipDirect." : "Everything you need to know about shipping and wholesale export with ShipDirect."}
-                </p>
-              </ScrollFadeUp>
-            </div>
-            <ScrollFadeUp delay={0.3}>
-              <ScrollFadeImg src="/illustrations/faq_relaxed_reader_illustration.png" alt="Relaxed ShipDirect Customer Reading FAQs" priority />
-            </ScrollFadeUp>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={fr ? "Centre d'aide" : "Help Centre"}
+        eyebrowIcon={LifeBuoy}
+        title={fr ? "Questions fréquemment posées" : "Frequently Asked Questions"}
+        subtitle={fr ? "Tout ce que vous devez savoir sur l'expédition et l'exportation en gros avec ShipDirect." : "Everything you need to know about shipping and wholesale export with ShipDirect."}
+        image={{ src: "/images/faq-reader-branded.jpg", alt: fr ? "Une cliente détendue lit sur une tablette à côté d'une boîte prête à expédier" : "A relaxed customer reading on a tablet beside a box ready to ship" }}
+      />
 
       {/* ── FAQ CONTENT ── */}
-      <section className="py-20 bg-[#F5F2ED]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section className="bg-off-white py-20 lg:py-28">
+        <div className="mx-auto max-w-3xl space-y-16 px-4 sm:px-6 lg:px-8">
           <ScrollFadeUp>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl">📦</span>
-              <h2 className="text-xl font-extrabold text-[#0D1F5C]">
+            <div className="mb-6 flex items-center gap-3">
+              <IconTile icon={Package} tone="navy" />
+              <h2 className="text-2xl font-extrabold tracking-tight text-brand-navy">
                 {fr ? "Expédition personnelle" : "Personal Shipping"}
               </h2>
             </div>
             <FaqAccordion items={b2cFaqs} />
           </ScrollFadeUp>
-          
+
           <ScrollFadeUp delay={0.1}>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl">🏭</span>
-              <h2 className="text-xl font-extrabold text-[#0D1F5C]">
+            <div className="mb-6 flex items-center gap-3">
+              <IconTile icon={Factory} tone="gold" />
+              <h2 className="text-2xl font-extrabold tracking-tight text-brand-navy">
                 {fr ? "Gros et exportation B2B" : "Wholesale & B2B Export"}
               </h2>
             </div>
@@ -118,25 +101,23 @@ export default function FaqContent() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-16 bg-[#0D1F5C]">
-        <ScrollFadeUp className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-            {fr ? "Vous avez encore des questions ?" : "Still Have Questions?"}
-          </h2>
-          <p className="text-blue-200 mb-8">
-            {fr ? "Notre équipe est heureuse de vous aider. Contactez-nous et nous répondrons rapidement." : "Our team is happy to help. Reach out and we'll respond quickly."}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <motion.a whileHover={{ scale: 1.03 }} href="mailto:info@shipdirect.ca" className="shimmer-btn inline-flex items-center px-6 py-3 bg-[#D42B2B] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#b82424] transition-all">
-              ✉️ info@shipdirect.ca
-            </motion.a>
-            <motion.a whileHover={{ scale: 1.03 }} href="tel:6137002747" className="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors">
-              📞 613-700-2747
-            </motion.a>
-          </div>
-        </ScrollFadeUp>
-      </section>
+      <CtaBand
+        title={fr ? "Vous avez encore des questions ?" : "Still Have Questions?"}
+        subtitle={fr ? "Notre équipe est heureuse de vous aider. Contactez-nous et nous répondrons rapidement." : "Our team is happy to help. Reach out and we'll respond quickly."}
+      >
+        <Button asChild variant="brand" size="xl" className="shimmer-btn">
+          <a href="mailto:info@shipdirect.ca">
+            <Mail data-icon="inline-start" />
+            info@shipdirect.ca
+          </a>
+        </Button>
+        <Button asChild variant="outline-light" size="xl">
+          <a href="tel:6137002747">
+            <Phone data-icon="inline-start" />
+            613-700-2747
+          </a>
+        </Button>
+      </CtaBand>
     </main>
   );
 }

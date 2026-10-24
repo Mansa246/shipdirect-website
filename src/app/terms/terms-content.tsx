@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
+import { Scale } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import PageHero from "@/components/site/PageHero";
+import { Card } from "@/components/ui/card";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="text-lg font-bold text-[#0D1F5C] mb-2">{title}</h2>
-      <div className="text-sm leading-relaxed text-[#1A1410]">{children}</div>
+      <h2 className="text-lg font-bold text-brand-navy mb-2">{title}</h2>
+      <div className="text-sm leading-relaxed text-body">{children}</div>
     </div>
   );
 }
@@ -23,21 +26,18 @@ export default function TermsContent() {
   }, [fr]);
 
   return (
-    <main className="bg-white py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#EEF1F8] text-[#0D1F5C] rounded-full px-4 py-1.5 text-sm font-medium mb-5">
-            {fr ? "Mentions légales" : "Legal"}
-          </div>
-          <h1 className="text-4xl font-extrabold text-[#0D1F5C] mb-3">
-            {fr ? "Conditions générales" : "Terms & Conditions"}
-          </h1>
-          <p className="text-sm text-[#6B7280]">
-            {fr ? "Dernière mise à jour : Janvier 2025" : "Last Updated: January 2025"}
-          </p>
-        </div>
-
-        <div className="space-y-8 text-[#1A1410]">
+    <main>
+      <PageHero
+        align="center"
+        eyebrow={fr ? "Mentions légales" : "Legal"}
+        eyebrowIcon={Scale}
+        title={fr ? "Conditions générales" : "Terms & Conditions"}
+        subtitle={fr ? "Dernière mise à jour : Janvier 2025" : "Last Updated: January 2025"}
+      />
+      <section className="bg-off-white py-16 lg:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <Card className="gap-0 rounded-3xl p-6 shadow-[var(--shadow-card)] sm:p-10">
+            <div className="space-y-8 text-body">
           {fr ? (
             <>
               <Section title="1. Services">
@@ -75,11 +75,11 @@ export default function TermsContent() {
               </Section>
               <Section title="12. Nous contacter">
                 Pour toute question sur ces Conditions générales :
-                <div className="mt-3 bg-[#EEF1F8] rounded-xl p-5">
-                  <p className="font-semibold text-[#0D1F5C]">ShipDirect</p>
+                <div className="mt-3 bg-navy-tint rounded-xl p-5">
+                  <p className="font-semibold text-brand-navy">ShipDirect</p>
                   <p>Point de dépôt Ottawa (Fourni à la confirmation)</p>
-                  <p><a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] hover:underline">info@shipdirect.ca</a></p>
-                  <p><a href="tel:6137002747" className="text-[#D42B2B] hover:underline">613-700-2747</a></p>
+                  <p><a href="mailto:info@shipdirect.ca" className="text-brand-red hover:underline">info@shipdirect.ca</a></p>
+                  <p><a href="tel:6137002747" className="text-brand-red hover:underline">613-700-2747</a></p>
                 </div>
               </Section>
             </>
@@ -120,17 +120,19 @@ export default function TermsContent() {
               </Section>
               <Section title="12. Contact Us">
                 For questions about these Terms & Conditions:
-                <div className="mt-3 bg-[#EEF1F8] rounded-xl p-5">
-                  <p className="font-semibold text-[#0D1F5C]">ShipDirect</p>
+                <div className="mt-3 bg-navy-tint rounded-xl p-5">
+                  <p className="font-semibold text-brand-navy">ShipDirect</p>
                   <p>Ottawa Drop-off Location (Provided upon confirmation)</p>
-                  <p><a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] hover:underline">info@shipdirect.ca</a></p>
-                  <p><a href="tel:6137002747" className="text-[#D42B2B] hover:underline">613-700-2747</a></p>
+                  <p><a href="mailto:info@shipdirect.ca" className="text-brand-red hover:underline">info@shipdirect.ca</a></p>
+                  <p><a href="tel:6137002747" className="text-brand-red hover:underline">613-700-2747</a></p>
                 </div>
               </Section>
             </>
           )}
+            </div>
+          </Card>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

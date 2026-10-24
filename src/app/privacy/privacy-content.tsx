@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
+import { Scale } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import PageHero from "@/components/site/PageHero";
+import { Card } from "@/components/ui/card";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="text-lg font-bold text-[#0D1F5C] mb-2">{title}</h2>
-      <div className="text-sm leading-relaxed text-[#1A1410]">{children}</div>
+      <h2 className="text-lg font-bold text-brand-navy mb-2">{title}</h2>
+      <div className="text-sm leading-relaxed text-body">{children}</div>
     </div>
   );
 }
@@ -23,21 +26,18 @@ export default function PrivacyContent() {
   }, [fr]);
 
   return (
-    <main className="bg-white py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#EEF1F8] text-[#0D1F5C] rounded-full px-4 py-1.5 text-sm font-medium mb-5">
-            {fr ? "Mentions légales" : "Legal"}
-          </div>
-          <h1 className="text-4xl font-extrabold text-[#0D1F5C] mb-3">
-            {fr ? "Politique de confidentialité" : "Privacy Policy"}
-          </h1>
-          <p className="text-sm text-[#6B7280]">
-            {fr ? "Dernière mise à jour : Janvier 2025" : "Last Updated: January 2025"}
-          </p>
-        </div>
-
-        <div className="prose prose-sm max-w-none space-y-8 text-[#1A1410]">
+    <main>
+      <PageHero
+        align="center"
+        eyebrow={fr ? "Mentions légales" : "Legal"}
+        eyebrowIcon={Scale}
+        title={fr ? "Politique de confidentialité" : "Privacy Policy"}
+        subtitle={fr ? "Dernière mise à jour : Janvier 2025" : "Last Updated: January 2025"}
+      />
+      <section className="bg-off-white py-16 lg:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <Card className="gap-0 rounded-3xl p-6 shadow-[var(--shadow-card)] sm:p-10">
+            <div className="prose prose-sm max-w-none space-y-8 text-body">
           {fr ? (
             <>
               <Section title="1. Introduction">
@@ -84,7 +84,7 @@ export default function PrivacyContent() {
                   <li>Demander la suppression de vos informations le cas échéant</li>
                 </ul>
                 Pour exercer ces droits, contactez-nous à{" "}
-                <a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] underline">info@shipdirect.ca</a>.
+                <a href="mailto:info@shipdirect.ca" className="text-brand-red underline">info@shipdirect.ca</a>.
               </Section>
               <Section title="7. Cookies">
                 Notre site web peut utiliser des cookies pour améliorer l&apos;expérience utilisateur et recueillir des données analytiques. Vous pouvez désactiver les cookies via les paramètres de votre navigateur ; cependant, certaines fonctionnalités du site web peuvent ne pas fonctionner correctement.
@@ -100,11 +100,11 @@ export default function PrivacyContent() {
               </Section>
               <Section title="11. Nous contacter">
                 Si vous avez des questions sur cette Politique de confidentialité :
-                <div className="mt-3 bg-[#EEF1F8] rounded-xl p-5 not-prose">
-                  <p className="font-semibold text-[#0D1F5C]">ShipDirect</p>
+                <div className="mt-3 bg-navy-tint rounded-xl p-5 not-prose">
+                  <p className="font-semibold text-brand-navy">ShipDirect</p>
                   <p>Point de dépôt Ottawa (Fourni à la confirmation)</p>
-                  <p><a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] hover:underline">info@shipdirect.ca</a></p>
-                  <p><a href="tel:6137002747" className="text-[#D42B2B] hover:underline">613-700-2747</a></p>
+                  <p><a href="mailto:info@shipdirect.ca" className="text-brand-red hover:underline">info@shipdirect.ca</a></p>
+                  <p><a href="tel:6137002747" className="text-brand-red hover:underline">613-700-2747</a></p>
                 </div>
               </Section>
             </>
@@ -154,7 +154,7 @@ export default function PrivacyContent() {
                   <li>Request deletion of your information where applicable</li>
                 </ul>
                 To exercise these rights, contact us at{" "}
-                <a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] underline">info@shipdirect.ca</a>.
+                <a href="mailto:info@shipdirect.ca" className="text-brand-red underline">info@shipdirect.ca</a>.
               </Section>
               <Section title="7. Cookies">
                 Our website may use cookies to enhance user experience and gather analytics data. You may disable cookies through your browser settings; however, some features of the website may not function properly if cookies are disabled.
@@ -170,17 +170,19 @@ export default function PrivacyContent() {
               </Section>
               <Section title="11. Contact Us">
                 If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
-                <div className="mt-3 bg-[#EEF1F8] rounded-xl p-5 not-prose">
-                  <p className="font-semibold text-[#0D1F5C]">ShipDirect</p>
+                <div className="mt-3 bg-navy-tint rounded-xl p-5 not-prose">
+                  <p className="font-semibold text-brand-navy">ShipDirect</p>
                   <p>Ottawa Drop-off Location (Provided upon confirmation)</p>
-                  <p><a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] hover:underline">info@shipdirect.ca</a></p>
-                  <p><a href="tel:6137002747" className="text-[#D42B2B] hover:underline">613-700-2747</a></p>
+                  <p><a href="mailto:info@shipdirect.ca" className="text-brand-red hover:underline">info@shipdirect.ca</a></p>
+                  <p><a href="tel:6137002747" className="text-brand-red hover:underline">613-700-2747</a></p>
                 </div>
               </Section>
             </>
           )}
+            </div>
+          </Card>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

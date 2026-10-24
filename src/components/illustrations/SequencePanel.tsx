@@ -14,7 +14,7 @@ export default function SequencePanel({ src, alt, index }: SequencePanelProps) {
 
   if (prefersReducedMotion) {
     return (
-      <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 shadow-md border border-gray-100">
+      <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-card)]">
         <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
       </div>
     );
@@ -27,7 +27,7 @@ export default function SequencePanel({ src, alt, index }: SequencePanelProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 shadow-md border border-gray-100 group"
+      className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-[var(--shadow-card)] group"
     >
       <Image 
         src={src} 

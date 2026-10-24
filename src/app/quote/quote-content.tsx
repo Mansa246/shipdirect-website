@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
+import { Mail, MapPin, MessageSquareText, Phone } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import ScrollFadeUp from "@/components/animations/ScrollFadeUp";
-import ScrollFadeImg from "@/components/illustrations/ScrollFadeImg";
+import PageHero from "@/components/site/PageHero";
+import { IconTile, SectionHeader } from "@/components/site/blocks";
+import { Card } from "@/components/ui/card";
 
 export default function QuoteContent() {
   const { lang } = useLanguage();
@@ -17,81 +19,70 @@ export default function QuoteContent() {
       : "Get a Quote | ShipDirect Canada to Senegal";
   }, [fr]);
 
+  const contacts = [
+    { icon: Phone, label: fr ? "Nous appeler" : "Call Us", value: "613-700-2747", href: "tel:6137002747" },
+    { icon: Mail, label: fr ? "Nous écrire" : "Email Us", value: "info@shipdirect.ca", href: "mailto:info@shipdirect.ca" },
+    { icon: MapPin, label: fr ? "Point de dépôt" : "Drop-off Location", value: fr ? "Point de dépôt Ottawa (Fourni à la confirmation)" : "Ottawa Drop-off Location (Provided upon confirmation)" },
+  ];
+
   return (
     <main>
-      {/* ── HERO ── */}
-      <section className="bg-[#0D1F5C] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <ScrollFadeUp>
-                <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm text-blue-200 font-medium mb-5">
-                  {fr ? "💬 Devis gratuit" : "💬 Free Quote"}
-                </div>
-              </ScrollFadeUp>
-              <ScrollFadeUp delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-                  {fr ? "Obtenir un devis d'expédition" : "Get a Shipping Quote"}
-                </h1>
-              </ScrollFadeUp>
-              <ScrollFadeUp delay={0.2}>
-                <p className="text-lg text-blue-200">
-                  {fr
-                    ? "Dites-nous ce que vous devez expédier et nous vous confirmerons les tarifs et les prochaines étapes. Rapide, simple, sans engagement."
-                    : "Tell us what you need to ship and we'll confirm pricing and next steps. Quick, easy, no obligation."}
-                </p>
-              </ScrollFadeUp>
-            </div>
-            
-            <ScrollFadeUp delay={0.3}>
-              <ScrollFadeImg src="/illustrations/pricing_quote_illustration.png" alt="Obtaining a quote online" priority />
-            </ScrollFadeUp>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={fr ? "Devis gratuit" : "Free Quote"}
+        eyebrowIcon={MessageSquareText}
+        title={fr ? "Obtenir un devis d'expédition" : "Get a Shipping Quote"}
+        subtitle={fr
+          ? "Dites-nous ce que vous devez expédier et nous vous confirmerons les tarifs et les prochaines étapes. Rapide, simple, sans engagement."
+          : "Tell us what you need to ship and we'll confirm pricing and next steps. Quick, easy, no obligation."}
+        image={{ src: "/images/step-pack-branded.jpg", alt: fr ? "Préparation d'une boîte avec des vêtements et des cadeaux" : "Packing a box with clothes and gifts" }}
+      />
 
       {/* ── FORM ── */}
-      <section className="py-16 bg-[#F5F2ED]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollFadeUp className="text-center mb-8">
-            <p className="text-[#1A1410]">
+      <section className="bg-off-white py-20 lg:py-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <ScrollFadeUp className="mb-8 text-center">
+            <p className="text-lg text-body">
               {fr
                 ? "Remplissez le formulaire ci-dessous et notre équipe vous répondra dans un délai d'un jour ouvrable avec les tarifs, la disponibilité et les détails d'expédition."
                 : "Fill out the form below and our team will respond within one business day with pricing, availability, and shipping details."}
             </p>
           </ScrollFadeUp>
-          <ScrollFadeUp delay={0.1} className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6">
-            <QuoteForm />
+          <ScrollFadeUp delay={0.1}>
+            <Card className="gap-0 rounded-3xl p-4 shadow-[var(--shadow-card)] sm:p-8">
+              <QuoteForm />
+            </Card>
           </ScrollFadeUp>
         </div>
       </section>
 
       {/* ── CONTACT ALTERNATIVES ── */}
-      <section className="py-16 bg-white">
-        <ScrollFadeUp className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-xl font-bold text-[#0D1F5C] mb-8">
-            {fr ? "Vous préférez nous contacter directement ?" : "Prefer to reach us directly?"}
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-[#EEF1F8] rounded-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
-              <div className="text-3xl mb-3">📞</div>
-              <div className="font-bold text-[#0D1F5C] text-sm mb-2">{fr ? "Nous appeler" : "Call Us"}</div>
-              <a href="tel:6137002747" className="text-[#D42B2B] font-semibold hover:underline">613-700-2747</a>
-            </div>
-            <div className="text-center p-6 bg-[#EEF1F8] rounded-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
-              <div className="text-3xl mb-3">✉️</div>
-              <div className="font-bold text-[#0D1F5C] text-sm mb-2">{fr ? "Nous écrire" : "Email Us"}</div>
-              <a href="mailto:info@shipdirect.ca" className="text-[#D42B2B] font-semibold hover:underline">info@shipdirect.ca</a>
-            </div>
-            <div className="text-center p-6 bg-[#EEF1F8] rounded-2xl border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
-              <div className="text-3xl mb-3">📍</div>
-              <div className="font-bold text-[#0D1F5C] text-sm mb-2">{fr ? "Point de dépôt" : "Drop-off Location"}</div>
-              <p className="text-sm text-[#6B7280]">
-                {fr ? "Point de dépôt Ottawa (Fourni à la confirmation)" : "Ottawa Drop-off Location (Provided upon confirmation)"}
-              </p>
-            </div>
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader title={fr ? "Vous préférez nous contacter directement ?" : "Prefer to reach us directly?"} className="mb-10" />
+          <div className="grid gap-5 sm:grid-cols-3">
+            {contacts.map((c, i) => {
+              const inner = (
+                <>
+                  <IconTile icon={c.icon} className="size-12" />
+                  <div className="text-sm font-bold text-brand-navy">{c.label}</div>
+                  <div className={c.href ? "font-semibold text-brand-red" : "text-sm text-muted-foreground"}>{c.value}</div>
+                </>
+              );
+              const cls = "h-full items-center gap-3 rounded-3xl border-transparent bg-off-white p-7 text-center shadow-none transition-transform duration-300 hover:-translate-y-1";
+              return (
+                <ScrollFadeUp key={i} delay={i * 0.06}>
+                  {c.href ? (
+                    <a href={c.href} className="block h-full">
+                      <Card className={cls}>{inner}</Card>
+                    </a>
+                  ) : (
+                    <Card className={cls}>{inner}</Card>
+                  )}
+                </ScrollFadeUp>
+              );
+            })}
           </div>
-        </ScrollFadeUp>
+        </div>
       </section>
     </main>
   );
