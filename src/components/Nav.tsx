@@ -77,7 +77,7 @@ export default function Nav() {
               alt="ShipDirect"
               width={772}
               height={511}
-              className="h-[43px] w-auto object-contain lg:h-[58px]"
+              className="h-[36px] w-auto object-contain lg:h-[46px]"
               priority
             />
           </Link>
