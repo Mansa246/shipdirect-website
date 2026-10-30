@@ -1,12 +1,11 @@
 "use client";
 
-import { BadgeDollarSign, Globe2, MapPin, MessageCircle, Package, Truck } from "lucide-react";
+import { BadgeDollarSign, MapPin, MessageCircle, Package, Truck } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const trustItemsEn = [
   { icon: MapPin, label: "Ottawa Drop-off Available" },
   { icon: Truck, label: "Canada Pickup Service Available" },
-  { icon: Globe2, label: "Keur Massar Destination" },
   { icon: Package, label: "Boxes, Barrels, Furniture & Vehicles" },
   { icon: BadgeDollarSign, label: "Flat-Rate CAD Pricing" },
   { icon: MessageCircle, label: "Dedicated Customer Support" },
@@ -15,7 +14,6 @@ const trustItemsEn = [
 const trustItemsFr = [
   { icon: MapPin, label: "Dépôt Ottawa disponible" },
   { icon: Truck, label: "Service de ramassage au Canada disponible" },
-  { icon: Globe2, label: "Destination Keur Massar" },
   { icon: Package, label: "Boîtes, barils, meubles et véhicules" },
   { icon: BadgeDollarSign, label: "Tarifs fixes en CAD" },
   { icon: MessageCircle, label: "Support client dédié" },
