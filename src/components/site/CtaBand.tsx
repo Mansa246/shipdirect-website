@@ -13,7 +13,7 @@ interface CtaBandProps {
 export default function CtaBand({ eyebrow, title, subtitle, children }: CtaBandProps) {
   return (
     <section className="relative isolate overflow-hidden bg-brand-navy py-20 lg:py-24">
-      <Image src="/images/home/hero-port-dusk.jpg" alt="" fill sizes="100vw" className="-z-20 object-cover opacity-30" />
+      <Image src="/images/home/hero-port-dusk-4k.jpg" alt="" fill sizes="100vw" className="-z-20 object-cover opacity-30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-navy/80 via-brand-navy/70 to-brand-navy" />
       <ScrollFadeUp className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         {eyebrow && (

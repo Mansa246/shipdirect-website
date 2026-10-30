@@ -121,10 +121,11 @@ export default function HomeContent() {
       {/* ── HERO ── */}
       <section className="relative isolate overflow-hidden bg-brand-navy text-white">
         <Image
-          src="/images/home/hero-port-dusk.jpg"
+          src="/images/home/hero-port-dusk-4k.jpg"
           alt=""
           fill
           priority
+          quality={90}
           sizes="100vw"
           className="-z-20 object-cover object-[70%_center]"
         />

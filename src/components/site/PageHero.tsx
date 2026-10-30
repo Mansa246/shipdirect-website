@@ -24,7 +24,7 @@ export default function PageHero({ eyebrow, eyebrowIcon: Icon, title, subtitle, 
 
   return (
     <section className="relative isolate overflow-hidden bg-brand-navy text-white">
-      <Image src="/images/home/hero-port-dusk.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />
+      <Image src="/images/home/hero-port-dusk-4k.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-navy via-brand-navy/95 to-brand-navy/70" />
 
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
