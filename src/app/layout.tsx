@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "ShipDirect | Canada to Senegal Shipping & Export",
   description:
-    "Ship anything from Canada to Senegal. Personal shipping (boxes, barrels, furniture, vehicles) and wholesale B2B export. Flat-rate CAD pricing. Ottawa drop-off. Keur Massar delivery.",
+    "Ship anything from Canada to Senegal. Personal shipping (boxes, barrels, furniture, vehicles) and wholesale B2B export. Flat-rate CAD pricing. Ottawa drop-off. Dakar delivery.",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",

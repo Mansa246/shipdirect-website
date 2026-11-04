@@ -40,8 +40,8 @@ export default function AboutContent() {
       ];
 
   const stats = fr
-    ? [{ value: "Ottawa", label: "Centre des opérations canadiennes" }, { value: "Keur Massar", label: "Destination Sénégal" }, { value: "B2C & B2B", label: "Personnel et Commercial" }]
-    : [{ value: "Ottawa", label: "Canadian Operations Hub" }, { value: "Keur Massar", label: "Senegal Destination" }, { value: "B2C & B2B", label: "Personal & Commercial" }];
+    ? [{ value: "Ottawa", label: "Centre des opérations canadiennes" }, { value: "Dakar", label: "Destination Sénégal" }, { value: "B2C & B2B", label: "Personnel et Commercial" }]
+    : [{ value: "Ottawa", label: "Canadian Operations Hub" }, { value: "Dakar", label: "Senegal Destination" }, { value: "B2C & B2B", label: "Personal & Commercial" }];
 
   return (
     <main>
@@ -84,8 +84,8 @@ export default function AboutContent() {
               </p>
               <p className="leading-relaxed text-muted-foreground">
                 {fr
-                  ? "Nos opérations sont simples et intentionnelles. Les clients à Ottawa peuvent déposer leurs marchandises à notre emplacement d'Ottawa (adresse fournie après confirmation), ou organiser un ramassage pour un petit supplément. De là, nous gérons l'ensemble du processus d'exportation — consolidation, documentation et transit — jusqu'à ce que votre envoi arrive en toute sécurité à notre établissement de Keur Massar au Sénégal. Les destinataires peuvent collecter en personne ou demander une livraison locale au Sénégal."
-                  : "Our operations are straightforward and intentional. Customers in Ottawa can drop their goods at our Ottawa location (address provided upon confirmation), or arrange a pickup for a small additional fee. From there, we handle the entire export process — consolidation, documentation, and transit — until your shipment arrives safely at our Keur Massar facility in Senegal. Recipients can collect in person or request local delivery within Senegal."}
+                  ? "Nos opérations sont simples et intentionnelles. Les clients à Ottawa peuvent déposer leurs marchandises à notre emplacement d'Ottawa (adresse fournie après confirmation), ou organiser un ramassage pour un petit supplément. De là, nous gérons l'ensemble du processus d'exportation — consolidation, documentation et transit — jusqu'à ce que votre envoi arrive en toute sécurité à notre établissement de Dakar au Sénégal. Les destinataires peuvent collecter en personne ou demander une livraison locale au Sénégal."
+                  : "Our operations are straightforward and intentional. Customers in Ottawa can drop their goods at our Ottawa location (address provided upon confirmation), or arrange a pickup for a small additional fee. From there, we handle the entire export process — consolidation, documentation, and transit — until your shipment arrives safely at our Dakar facility in Senegal. Recipients can collect in person or request local delivery within Senegal."}
               </p>
               <p className="leading-relaxed text-muted-foreground">
                 {fr

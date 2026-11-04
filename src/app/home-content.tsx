@@ -49,15 +49,15 @@ export default function HomeContent() {
         { n: "01", icon: MessageSquareText, title: "Demander un devis", desc: "Remplissez le formulaire ou appelez-nous. Nous confirmons les détails et les tarifs de votre envoi." },
         { n: "02", icon: Truck, title: "Déposer ou planifier un ramassage", desc: "Apportez vos marchandises à Ottawa, ou nous organisons le ramassage pour un supplément." },
         { n: "03", icon: Ship, title: "Nous gérons l'expédition", desc: "Préparation, documentation et expédition vers le Sénégal." },
-        { n: "04", icon: Anchor, title: "Arrive au Sénégal", desc: "Les marchandises arrivent à Keur Massar, prêtes pour la collecte." },
-        { n: "05", icon: PackageCheck, title: "Collecter ou se faire livrer", desc: "Collecte à Keur Massar, ou demander une livraison locale au Sénégal pour supplément." },
+        { n: "04", icon: Anchor, title: "Arrive au Sénégal", desc: "Les marchandises arrivent à Dakar, prêtes pour la collecte." },
+        { n: "05", icon: PackageCheck, title: "Collecter ou se faire livrer", desc: "Collecte à Dakar, ou demander une livraison locale au Sénégal pour supplément." },
       ]
     : [
         { n: "01", icon: MessageSquareText, title: "Request a Quote", desc: "Fill out the form or call us. We confirm your shipment details and pricing." },
         { n: "02", icon: Truck, title: "Drop Off or Schedule Pickup", desc: "Bring goods to Ottawa, or we arrange pickup for an extra fee." },
         { n: "03", icon: Ship, title: "We Handle Shipping", desc: "Preparation, documentation, and dispatch to Senegal." },
-        { n: "04", icon: Anchor, title: "Arrives in Senegal", desc: "Goods arrive at Keur Massar, ready for collection." },
-        { n: "05", icon: PackageCheck, title: "Collect or Get Delivered", desc: "Pickup in Keur Massar, or request local Senegal delivery for extra charge." },
+        { n: "04", icon: Anchor, title: "Arrives in Senegal", desc: "Goods arrive in Dakar, ready for collection." },
+        { n: "05", icon: PackageCheck, title: "Collect or Get Delivered", desc: "Pickup in Dakar, or request local Senegal delivery for extra charge." },
       ];
 
   const pricingPreview = fr
@@ -80,7 +80,7 @@ export default function HomeContent() {
         { icon: BadgeDollarSign, title: "Tarification fixe transparente", desc: "Sachez exactement ce que vous paierez avant d'expédier. Tarifs clairs en CAD. Aucuns frais cachés." },
         { icon: Users, title: "Centré sur la famille et la communauté", desc: "Nous servons la diaspora sénégalaise au Canada. Nous savons que vous n'envoyez pas seulement des marchandises — vous envoyez un soutien à la maison." },
         { icon: Car, title: "Tout s'expédie — y compris les véhicules", desc: "D'un grand sac (Sac Costco) à un VUS complet, nous avons la capacité et le réseau logistique pour gérer toutes les tailles." },
-        { icon: MapPin, title: "Emplacement pratique à Ottawa", desc: "Déposez à notre établissement d'Ottawa ou organisez un ramassage. Collectez à Keur Massar ou demandez une livraison locale au Sénégal." },
+        { icon: MapPin, title: "Emplacement pratique à Ottawa", desc: "Déposez à notre établissement d'Ottawa ou organisez un ramassage. Collectez à Dakar ou demandez une livraison locale au Sénégal." },
         { icon: Handshake, title: "Capable en B2B et gros", desc: "Nous approvisionnons et exportons des volumes commerciaux de produits canadiens pour les acheteurs en gros au Sénégal. Prêt pour le commerce, fiable, responsable." },
       ]
     : [
@@ -88,7 +88,7 @@ export default function HomeContent() {
         { icon: BadgeDollarSign, title: "Transparent Flat-Rate Pricing", desc: "Know exactly what you'll pay before you ship. Clear rates in CAD. No hidden fees." },
         { icon: Users, title: "Family & Community-Focused", desc: "We serve the Senegalese diaspora in Canada. We know you're not just sending goods — you're sending support home." },
         { icon: Car, title: "Everything Ships — Including Vehicles", desc: "From a large bag (Costco bag) to a full SUV, we have the capacity and logistics network to handle every size." },
-        { icon: MapPin, title: "Convenient Ottawa Location", desc: "Drop off at our Ottawa facility or arrange pickup. Collect in Keur Massar or request Senegal local delivery." },
+        { icon: MapPin, title: "Convenient Ottawa Location", desc: "Drop off at our Ottawa facility or arrange pickup. Collect in Dakar or request Senegal local delivery." },
         { icon: Handshake, title: "B2B & Wholesale Capable", desc: "We supply and export commercial volumes of Canadian goods to wholesale buyers in Senegal. Trade-ready, reliable, accountable." },
       ];
 
@@ -97,20 +97,20 @@ export default function HomeContent() {
         { q: "Que puis-je expédier du Canada au Sénégal ?", a: "Vous pouvez expédier une large gamme de biens personnels incluant vêtements, articles ménagers, nourriture, électronique, meubles (sofas, tables) et véhicules (berlines, VUS, camions). Nous expédions via des grands sacs (Sac Costco), petites boîtes, grandes boîtes, barils/fûts et exportation complète de véhicules. Contactez-nous si vous n'êtes pas sûr d'un article spécifique." },
         { q: "Les prix incluent-ils la douane ou les frais portuaires ?", a: "Pour les colis et meubles B2C, oui — droits de douane et frais d'importation inclus. Pour les véhicules, les frais portuaires sont à régler avec nos frais ; les droits de douane peuvent être payés directement par le client ou remis à ShipDirect qui les règle en son nom." },
         { q: "Offrez-vous le ramassage au Canada ?", a: "Oui, nous pouvons organiser le ramassage au Canada pour un supplément. Les frais dépendent de votre emplacement et de la distance de notre établissement d'Ottawa. Contactez-nous au 613-700-2747 ou info@shipdirect.ca pour demander un devis de ramassage." },
-        { q: "Où puis-je collecter mon envoi au Sénégal ?", a: "Tous les envois B2C arrivent à notre établissement de Keur Massar au Sénégal. Les destinataires collectent leurs marchandises là-bas sans frais supplémentaires. Nous vous notifierons lorsque votre envoi sera prêt." },
+        { q: "Où puis-je collecter mon envoi au Sénégal ?", a: "Tous les envois B2C arrivent à notre établissement de Dakar au Sénégal. Les destinataires collectent leurs marchandises là-bas sans frais supplémentaires. Nous vous notifierons lorsque votre envoi sera prêt." },
         { q: "Puis-je expédier une voiture ou un véhicule ?", a: "Oui. Nous expédions les berlines pour 1 600 $ CAD et les VUS ou camions pour 1 700 $ CAD, aller simple. Contactez-nous pour discuter des exigences de préparation du véhicule et de la documentation nécessaire." },
       ]
     : [
         { q: "What can I ship from Canada to Senegal?", a: "You can ship a wide range of personal goods including clothing, household items, food, electronics, furniture (sofas, tables), and vehicles (sedans, SUVs, trucks). We ship via large bags (Costco bags), small boxes, large boxes, barrels/drums, and full vehicle export. Contact us if you're unsure about a specific item." },
         { q: "Do prices include customs or port fees?", a: "For B2C parcels and furniture, yes — customs duties and import charges are included. For vehicles, port fees are due with our shipping fee; customs duties can be paid directly by the client or remitted to ShipDirect and we pay on their behalf." },
         { q: "Do you offer pickup in Canada?", a: "Yes, we can arrange pickup in Canada for an additional charge. The fee depends on your location and distance from our Ottawa facility. Contact us at 613-700-2747 or info@shipdirect.ca to request a pickup quote." },
-        { q: "Where do I collect my shipment in Senegal?", a: "All B2C shipments arrive at our Keur Massar facility in Senegal. Recipients collect their goods there at no additional charge. We'll notify you when your shipment is ready." },
+        { q: "Where do I collect my shipment in Senegal?", a: "All B2C shipments arrive at our Dakar facility in Senegal. Recipients collect their goods there at no additional charge. We'll notify you when your shipment is ready." },
         { q: "Can I ship a car or vehicle?", a: "Yes. We ship sedans for $1,600 CAD and SUVs or trucks for $1,700 CAD, one-way. Contact us to discuss vehicle preparation requirements and documentation needed." },
       ];
 
   const b2cList = fr
-    ? ["Grands sacs (Sac Costco), petites et grandes boîtes, barils", "Meubles et articles surdimensionnés", "Véhicules (berlines, VUS, camions)", "Dépôt à Ottawa ou ramassage payant disponible", "Collecte à Keur Massar ou livraison locale payante au Sénégal"]
-    : ["Large bags (Costco bags), small & big boxes, barrels", "Furniture and oversized items", "Vehicles (sedans, SUVs, trucks)", "Drop-off in Ottawa or paid pickup available", "Pickup in Keur Massar or paid local delivery in Senegal"];
+    ? ["Grands sacs (Sac Costco), petites et grandes boîtes, barils", "Meubles et articles surdimensionnés", "Véhicules (berlines, VUS, camions)", "Dépôt à Ottawa ou ramassage payant disponible", "Collecte à Dakar ou livraison locale payante au Sénégal"]
+    : ["Large bags (Costco bags), small & big boxes, barrels", "Furniture and oversized items", "Vehicles (sedans, SUVs, trucks)", "Drop-off in Ottawa or paid pickup available", "Pickup in Dakar or paid local delivery in Senegal"];
 
   const b2bList = fr
     ? ["Approvisionnement direct en produits du Canada", "Pois chiches, pois, lentilles, haricots, épices et plus", "Coordination d'exportation et livraison au port", "Les entreprises gèrent le dédouanement portuaire en aval", "Devis B2B dédiés et support de compte"]
@@ -172,8 +172,8 @@ export default function HomeContent() {
           <ScrollFadeUp delay={0.4}>
             <div className="inline-flex flex-wrap items-stretch gap-x-6 gap-y-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-md sm:gap-x-8 sm:px-6">
               {(fr
-                ? [{ value: "Ottawa", label: "Point de dépôt" }, { value: "Keur Massar", label: "Destination, Sénégal" }, { value: "B2C + B2B", label: "Personnel et Grossiste" }]
-                : [{ value: "Ottawa", label: "Drop-off Location" }, { value: "Keur Massar", label: "Destination, Senegal" }, { value: "B2C + B2B", label: "Personal & Wholesale" }]
+                ? [{ value: "Ottawa", label: "Point de dépôt" }, { value: "Dakar", label: "Destination, Sénégal" }, { value: "B2C + B2B", label: "Personnel et Grossiste" }]
+                : [{ value: "Ottawa", label: "Drop-off Location" }, { value: "Dakar", label: "Destination, Senegal" }, { value: "B2C + B2B", label: "Personal & Wholesale" }]
               ).map((stat, i) => (
                 <div key={i} className="flex items-center gap-6 sm:gap-8">
                   {i > 0 && <Separator orientation="vertical" className="hidden bg-white/15 sm:block" />}
@@ -221,7 +221,7 @@ export default function HomeContent() {
                     {fr ? "Envoyez n'importe quoi du Canada au Sénégal" : "Send Anything From Canada to Senegal"}
                   </h3>
                   <p className="mb-6 leading-relaxed text-muted-foreground">
-                    {fr ? "Boîtes, sacs, barils, meubles et véhicules — expédiés depuis Ottawa directement à Keur Massar, Sénégal. Tarifs simples. Pas de surprises." : "Boxes, bags, barrels, furniture, and vehicles — shipped from Ottawa directly to Keur Massar, Senegal. Simple pricing. No surprises."}
+                    {fr ? "Boîtes, sacs, barils, meubles et véhicules — expédiés depuis Ottawa directement à Dakar, Sénégal. Tarifs simples. Pas de surprises." : "Boxes, bags, barrels, furniture, and vehicles — shipped from Ottawa directly to Dakar, Senegal. Simple pricing. No surprises."}
                   </p>
                   <CheckList items={b2cList} className="mb-8" />
                   <Button asChild variant="brand" size="xl" className="mt-auto self-start">

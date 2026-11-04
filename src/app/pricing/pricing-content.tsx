@@ -47,8 +47,8 @@ export default function PricingContent() {
     : ["Standard: Drop-off at our Ottawa location (address provided upon confirmation)", "Pickup available in Canada for an additional charge (varies by distance)", "Contact us to get a pickup quote before shipping"];
 
   const senegalNotes = fr
-    ? ["Tous les envois arrivent à Keur Massar, Sénégal", "Collecte gratuite à l'établissement de Keur Massar pour les destinataires", "Livraison locale au Sénégal disponible pour un supplément", "Colis/meubles B2C : droits de douane et frais d'importation inclus", "Véhicules : frais portuaires inclus avec nos frais ; droits de douane payables directement ou via ShipDirect"]
-    : ["All shipments arrive at Keur Massar, Senegal", "Free pickup at Keur Massar facility for recipients", "Local delivery within Senegal available for an additional charge", "B2C parcels/furniture: customs duties and import charges included", "Vehicles: port fees due with shipping fee; customs duties payable directly or via ShipDirect on your behalf"];
+    ? ["Tous les envois arrivent à Dakar, Sénégal", "Collecte gratuite à l'établissement de Dakar pour les destinataires", "Livraison locale au Sénégal disponible pour un supplément", "Colis/meubles B2C : droits de douane et frais d'importation inclus", "Véhicules : frais portuaires inclus avec nos frais ; droits de douane payables directement ou via ShipDirect"]
+    : ["All shipments arrive in Dakar, Senegal", "Free pickup at Dakar facility for recipients", "Local delivery within Senegal available for an additional charge", "B2C parcels/furniture: customs duties and import charges included", "Vehicles: port fees due with shipping fee; customs duties payable directly or via ShipDirect on your behalf"];
 
   return (
     <main>

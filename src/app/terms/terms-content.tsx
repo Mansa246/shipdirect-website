@@ -59,7 +59,7 @@ export default function TermsContent() {
                 Les clients sont responsables de la livraison des marchandises à notre point de dépôt d&apos;Ottawa (adresse fournie à la confirmation), à moins qu&apos;un ramassage payant n&apos;ait été organisé à l&apos;avance. Les services de ramassage sont soumis à disponibilité et entraîneront un supplément selon la distance.
               </Section>
               <Section title="7. Livraison au Sénégal">
-                La livraison standard est la collecte à notre établissement de Keur Massar sans frais supplémentaires. La livraison locale au Sénégal est disponible pour un supplément, organisée à l&apos;avance. ShipDirect n&apos;est pas responsable des retards causés par un destinataire ne récupérant pas son envoi.
+                La livraison standard est la collecte à notre établissement de Dakar sans frais supplémentaires. La livraison locale au Sénégal est disponible pour un supplément, organisée à l&apos;avance. ShipDirect n&apos;est pas responsable des retards causés par un destinataire ne récupérant pas son envoi.
               </Section>
               <Section title="8. Conditions B2B">
                 Les commandes commerciales et en gros sont régies par des accords écrits distincts entre ShipDirect et le client. La responsabilité de ShipDirect prend fin au port désigné au Sénégal.
@@ -104,7 +104,7 @@ export default function TermsContent() {
                 Customers are responsible for delivering goods to our Ottawa drop-off location (address provided upon confirmation), unless a paid pickup has been arranged in advance. Pickup services are subject to availability and will incur an additional charge based on distance.
               </Section>
               <Section title="7. Delivery in Senegal">
-                Standard delivery is collection by the recipient at our Keur Massar, Senegal facility at no additional charge. Local delivery within Senegal is available for an additional fee, arranged in advance.
+                Standard delivery is collection by the recipient at our Dakar, Senegal facility at no additional charge. Local delivery within Senegal is available for an additional fee, arranged in advance.
               </Section>
               <Section title="8. B2B Terms">
                 Commercial and wholesale orders are governed by separate written agreements between ShipDirect and the client. ShipDirect&apos;s responsibility ends at the designated port in Senegal.
